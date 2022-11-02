@@ -1,8 +1,8 @@
 # Helm charts for otf
 
-This is the repo for helm charts for [otf](https://github.com/leg100/otf).
+Helm charts repository for [otf](https://github.com/leg100/otf).
 
-The repo currently hosts one helm chart, which deploys `otfd` server(s) onto a kubernetes cluster.
+Currently hosts one helm chart, which deploys `otfd` server(s) onto a kubernetes cluster.
 
 ## Instructions
 
