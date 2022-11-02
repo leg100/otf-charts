@@ -20,16 +20,16 @@ database: ""
 # source database username from a secret
 databaseUsernameFromSecret:
   # name of secret
-  name: ""
+  # name: ""
   # key within secret containing username
-  key: ""
+  # key: ""
 
 # source database pasword from a secret
 databasePasswordFromSecret:
   # name of secret
-  name: ""
+  # name: ""
   # key within secret containing password
-  key: ""
+  # key: ""
 
 # secret string for signing urls - required.
 secret: ""
