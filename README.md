@@ -1,4 +1,4 @@
-# Helm charts for otf
+# otf-charts
 
 Helm charts repository for [otf](https://github.com/leg100/otf).
 
