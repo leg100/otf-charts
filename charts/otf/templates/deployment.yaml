@@ -50,6 +50,10 @@ spec:
             {{ end }}
             - name: OTF_SECRET
               value: {{ .Values.secret }}
+            {{ if .Values.siteAdminToken }}
+            - name: OTF_SITE_TOKEN
+              value: {{ .Values.siteAdminToken }}
+            {{ end }}
             - name: OTF_GITHUB_CLIENT_ID
               value: {{ .Values.github.clientID }}
             - name: OTF_GITHUB_CLIENT_SECRET

@@ -34,6 +34,10 @@ databasePasswordFromSecret:
 # secret string for signing urls - required.
 secret: ""
 
+# site admin token - empty string disables site admin
+# account
+siteAdminToken: ""
+
 # log http requests in log output
 logHTTPRequests: false
 
