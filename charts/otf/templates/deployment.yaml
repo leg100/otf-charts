@@ -54,6 +54,10 @@ spec:
             - name: OTF_SITE_TOKEN
               value: {{ .Values.siteAdminToken }}
             {{ end }}
+            {{ if .Values.maxConfigSize }}
+            - name: OTF_MAX_CONFIG_SIZE
+              value: {{ .Values.maxConfigSize }}
+            {{ end }}
             - name: OTF_GITHUB_CLIENT_ID
               value: {{ .Values.github.clientID }}
             - name: OTF_GITHUB_CLIENT_SECRET

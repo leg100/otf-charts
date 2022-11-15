@@ -38,6 +38,9 @@ secret: ""
 # account
 siteAdminToken: ""
 
+# max config upload size in bytes
+maxConfigSize: ""
+
 # log http requests in log output
 logHTTPRequests: false
 
