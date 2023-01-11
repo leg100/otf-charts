@@ -14,6 +14,10 @@ imagePullSecrets: []
 nameOverride: ""
 fullnameOverride: ""
 
+# System hostname used in links - if unset then a hostname is inferred
+# from the listening address. It's recommended you set this.
+hostname: ""
+
 # postgres connection string
 database: ""
 
