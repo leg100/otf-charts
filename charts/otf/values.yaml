@@ -45,6 +45,9 @@ siteAdminToken: ""
 # max config upload size in bytes
 maxConfigSize: ""
 
+# logLevel: info, debug, or trace
+logLevel: info
+
 # log http requests in log output
 logHTTPRequests: false
 
