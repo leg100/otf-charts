@@ -70,6 +70,14 @@ spec:
               value: {{ .Values.gitlab.clientSecret }}
             - name: OTF_SANDBOX
               value: "{{ .Values.sandbox }}"
+            {{ if .Values.CACerts -}}
+            - name: SSL_CERT_DIR
+              value: /certs
+            {{- end }}
+            {{ with .Values.proxy -}}
+            - name: HTTPS_PROXY
+              value: "{{ . }}"
+            {{- end }}
           securityContext:
             privileged: {{ .Values.sandbox }}
           image: "{{ .Values.image.repository }}:{{ .Values.image.tag | default .Chart.AppVersion }}"
@@ -88,6 +96,20 @@ spec:
               port: 8080
           resources:
             {{- toYaml .Values.resources | nindent 12 }}
+          {{ if .Values.CACerts }}
+          volumeMounts:
+          - name: certs
+            mountPath: /certs
+          {{ end }}
+      {{ if .Values.CACerts }}
+      volumes:
+        - name: certs
+          configMap:
+            name: certs
+            items:
+              - key: ca.pem
+                path: ca.pem
+      {{ end }}
       {{- with .Values.nodeSelector }}
       nodeSelector:
         {{- toYaml . | nindent 8 }}

@@ -108,6 +108,15 @@ serviceMonitor:
 # enable sandboxing of terraform apply - note, this will run pods as privileged
 sandbox: false
 
+# mount CA certificates - if true then the otfd container will expect to find a
+# configmap named 'ssl-certs' with a key named 'ca.pem', which should contain
+# CA certificates. The CA certificates are then made available to otfd and to terraform.
+# Allows terraform to communicate with API endpoints that use custom CA certs.
+CACerts: false
+
+# Specify an https proxy for outbound connections.
+#proxy:
+
 resources: {}
   # We usually recommend not to specify default resources and to leave this as a conscious
   # choice for the user. This also increases chances charts run on environments with little
