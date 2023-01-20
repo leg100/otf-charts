@@ -2,6 +2,17 @@ apiVersion: v1
 entries:
   otf:
   - apiVersion: v2
+    appVersion: 0.0.22
+    created: "2023-01-20T11:50:50.170104381Z"
+    description: Open Terraforming Framework, a collection of open source terraform
+      components.
+    digest: 40147b6679c343873992a034ba805d74239653ac30840dc869c82ad0b31c86aa
+    name: otf
+    type: application
+    urls:
+    - https://github.com/leg100/otf-charts/releases/download/otf-0.1.10/otf-0.1.10.tgz
+    version: 0.1.10
+  - apiVersion: v2
     appVersion: 0.0.21
     created: "2023-01-19T09:56:07.349777949Z"
     description: Open Terraforming Framework, a collection of open source terraform
@@ -89,4 +100,4 @@ entries:
     urls:
     - https://github.com/leg100/otf-charts/releases/download/otf-0.1.1/otf-0.1.1.tgz
     version: 0.1.1
-generated: "2023-01-19T09:56:07.34979885Z"
+generated: "2023-01-20T11:50:50.170439691Z"
