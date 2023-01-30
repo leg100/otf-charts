@@ -1,6 +1,6 @@
 # otf-charts
 
-Helm charts repository for [otf](https://github.com/leg100/otf).
+Helm charts repository for [OTF](https://github.com/leg100/otf).
 
 ## Instructions
 
