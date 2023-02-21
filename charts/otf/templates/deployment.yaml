@@ -96,13 +96,17 @@ spec:
               port: 8080
           resources:
             {{- toYaml .Values.resources | nindent 12 }}
-          {{ if .Values.CACerts }}
           volumeMounts:
+          - name: tmp
+            mountPath: /tmp
+          {{ if .Values.CACerts }}
           - name: certs
             mountPath: /certs
           {{ end }}
-      {{ if .Values.CACerts }}
       volumes:
+        - name: tmp
+          emptyDir:
+      {{ if .Values.CACerts }}
         - name: certs
           configMap:
             name: certs
