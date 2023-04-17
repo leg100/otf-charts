@@ -5,5 +5,5 @@ repos:
       - id: helm-docs
         args:
           - -c=./charts/otf
-          - -o=../../README.md
           - -t=../../README.md.gotmpl
+          - -o=../../README.md
