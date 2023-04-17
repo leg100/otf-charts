@@ -1,6 +1,6 @@
 apiVersion: v2
 name: otf
-description: Open Terraforming Framework.
+description: OTF helm charts.
 
 # A chart can be either an 'application' or a 'library' chart.
 #

@@ -1,0 +1,9 @@
+repos:
+  - repo: https://github.com/norwoodj/helm-docs
+    rev: v1.2.0
+    hooks:
+      - id: helm-docs
+        args:
+          - -c=./charts/otf
+          - -o=../../README.md
+          - -t=../../README.md.gotmpl

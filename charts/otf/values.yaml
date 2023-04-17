@@ -2,6 +2,7 @@
 # This is a YAML-formatted file.
 # Declare variables to be passed into your templates.
 
+# -- Number of otfd nodes in cluster
 replicaCount: 1
 
 image:
@@ -17,39 +18,42 @@ fullnameOverride: ""
 
 # System hostname used in links - if unset then a hostname is inferred
 # from the listening address. It's recommended you set this.
+
+# -- Set client-accessible hostname
+# See [docs](https://docs.otf.ninja/config/flags/#-hostname).
 hostname: ""
 
-# postgres connection string
+# -- Postgres connection string
 database: ""
 
-# source database username from a secret
+# -- Source database username from a secret
 databaseUsernameFromSecret:
   # name of secret
   # name: ""
   # key within secret containing username
   # key: ""
 
-# source database pasword from a secret
+# -- Source database password from a secret
 databasePasswordFromSecret:
   # name of secret
   # name: ""
   # key within secret containing password
   # key: ""
 
-# secret string for signing urls - required.
+# -- Secret string for signing urls - required.
 secret: ""
 
-# site admin token - empty string disables site admin
-# account
+# -- Site admin token - empty string disables site admin
+# account. See [docs](https://docs.otf.ninja/config/flags/#-site-token).
 siteAdminToken: ""
 
-# max config upload size in bytes
+# -- Max config upload size in bytes. See [docs](https://docs.otf.ninja/config/flags/#-max-config-size).
 maxConfigSize: ""
 
-# logLevel: info, debug, or trace
+# -- Logging verbosity: error, info, debug, or trace
 logLevel: info
 
-# log http requests in log output
+# -- Log http requests.
 logHTTPRequests: false
 
 github:
@@ -102,14 +106,14 @@ ingress:
   #   hosts:
   #   - otf.ninja
 
-# collect prometheus metrics
+# -- Collect prometheus metrics
 serviceMonitor:
   enabled: false
 
-# enable sandboxing of terraform apply - note, this will run pods as privileged
+# -- Enable sandboxing of terraform apply - note, this will run pods as privileged
 sandbox: false
 
-# mount CA certificates - if true then the otfd container will expect to find a
+# -- Mount CA certificates - if true then the otfd container will expect to find a
 # configmap named 'ssl-certs' with a key named 'ca.pem', which should contain
 # CA certificates. The CA certificates are then made available to otfd and to terraform.
 # Allows terraform to communicate with API endpoints that use custom CA certs.
