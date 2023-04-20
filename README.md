@@ -22,8 +22,8 @@ helm upgrade --install otf otf/otf
 | autoscaling.minReplicas | int | `1` |  |
 | autoscaling.targetCPUUtilizationPercentage | int | `80` |  |
 | database | string | `""` | Postgres connection string |
-| databasePasswordFromSecret | string | `nil` | Source database password from a secret |
-| databaseUsernameFromSecret | string | `nil` | Source database username from a secret |
+| databasePasswordFromSecret | object | `nil` | Source database password from a secret |
+| databaseUsernameFromSecret | object | `nil` | Source database username from a secret |
 | fullnameOverride | string | `""` |  |
 | github.clientID | string | `""` |  |
 | github.clientSecret | string | `""` |  |
@@ -49,6 +49,7 @@ helm upgrade --install otf otf/otf
 | nodeSelector | object | `{}` |  |
 | podAnnotations | object | `{}` |  |
 | podSecurityContext | object | `{}` |  |
+| postgres.enabled | bool | `false` | Install postgres chart dependency. |
 | replicaCount | int | `1` | Number of otfd nodes in cluster |
 | resources | object | `{}` |  |
 | sandbox | bool | `false` | Enable sandboxing of terraform apply - note, this will run pods as privileged |
