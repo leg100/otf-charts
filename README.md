@@ -1,6 +1,6 @@
 # otf-charts
 
-![Version: 0.2.5](https://img.shields.io/badge/Version-0.2.5-informational?style=flat-square) ![Type: application](https://img.shields.io/badge/Type-application-informational?style=flat-square) ![AppVersion: 0.0.36](https://img.shields.io/badge/AppVersion-0.0.36-informational?style=flat-square)
+![Version: 0.2.6](https://img.shields.io/badge/Version-0.2.6-informational?style=flat-square) ![Type: application](https://img.shields.io/badge/Type-application-informational?style=flat-square) ![AppVersion: 0.0.36](https://img.shields.io/badge/AppVersion-0.0.36-informational?style=flat-square)
 
 [OTF](https://github.com/leg100/otf) Helm charts.
 
@@ -41,8 +41,8 @@ helm upgrade --install otf otf/otf
 | ingress.path | string | `"/"` |  |
 | ingress.pathType | string | `"Prefix"` |  |
 | ingress.tls | list | `[]` |  |
-| logHTTPRequests | bool | `false` | Log http requests. |
 | logging.format | string | `"default"` | Logging format: default, text, or json. See [docs](https://docs.otf.ninja/config/flags/#-log-format) |
+| logging.http | bool | `false` | Log http requests. |
 | logging.verbosity | int | `0` | Logging verbosity, the higher the number the more verbose the logs. See [docs](https://docs.otf.ninja/config/flags/#-v). |
 | maxConfigSize | string | `""` | Max config upload size in bytes. See [docs](https://docs.otf.ninja/config/flags/#-max-config-size). |
 | nameOverride | string | `""` |  |

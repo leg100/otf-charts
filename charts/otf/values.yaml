@@ -55,9 +55,8 @@ logging:
   verbosity: 0
   # -- Logging format: default, text, or json. See [docs](https://docs.otf.ninja/config/flags/#-log-format)
   format: default
-
-# -- Log http requests.
-logHTTPRequests: false
+  # -- Log http requests.
+  http: false
 
 github:
   clientID: ""

@@ -36,8 +36,10 @@ spec:
               value: "{{ .Values.logging.verbosity }}"
             - name: OTF_LOG_FORMAT
               value: "{{ .Values.logging.format }}"
+            {{ if .Values.logging.http -}}
             - name: OTF_LOG_HTTP_REQUESTS
-              value: "{{ .Values.logHTTPRequests }}"
+              value: "true"
+            {{- end }}
             - name: OTF_DATABASE
               value: {{ .Values.database }}
             {{ with .Values.databaseUsernameFromSecret }}
