@@ -23,17 +23,21 @@ fullnameOverride: ""
 # See [docs](https://docs.otf.ninja/config/flags/#-hostname).
 hostname: ""
 
+postgres:
+  # -- Install postgres chart dependency.
+  enabled: false
+
 # -- Postgres connection string
 database: ""
 
-# -- Source database username from a secret
+# -- (object) Source database username from a secret
 databaseUsernameFromSecret:
   # name of secret
   # name: ""
   # key within secret containing username
   # key: ""
 
-# -- Source database password from a secret
+# -- (object) Source database password from a secret
 databasePasswordFromSecret:
   # name of secret
   # name: ""
