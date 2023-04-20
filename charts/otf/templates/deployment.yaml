@@ -72,7 +72,7 @@ spec:
               value: {{ .Values.gitlab.clientSecret }}
             {{ with .Values.google.audience -}}
             - name: OTF_GOOGLE_JWT_AUDIENCE
-              value: {{ .Values.database }}
+              value: {{ . }}
             {{- end }}
             - name: OTF_SANDBOX
               value: "{{ .Values.sandbox }}"
