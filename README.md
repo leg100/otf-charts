@@ -79,6 +79,7 @@ make bump
 Then re-generate the `README.md` from its template, `README.md.gotmpl`:
 
 ```bash
+# requires `helm-docs`
 make readme
 ```
 
