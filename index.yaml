@@ -3,6 +3,16 @@ entries:
   otf:
   - apiVersion: v2
     appVersion: 0.0.36
+    created: "2023-04-20T17:25:59.555883489Z"
+    description: OTF helm charts.
+    digest: 63acf03ad28cb257d09f83f32110393dcbe0f95b3035f2dd9dbdbb61df3c4390
+    name: otf
+    type: application
+    urls:
+    - https://github.com/leg100/otf-charts/releases/download/otf-0.2.6/otf-0.2.6.tgz
+    version: 0.2.6
+  - apiVersion: v2
+    appVersion: 0.0.36
     created: "2023-04-20T13:34:14.549565009Z"
     description: OTF helm charts.
     digest: 64dabf7c013d5405a0b5d2459a05dd51b6ec19016265c02f37cd5bc5ed259cb5
@@ -195,4 +205,4 @@ entries:
     urls:
     - https://github.com/leg100/otf-charts/releases/download/otf-0.1.1/otf-0.1.1.tgz
     version: 0.1.1
-generated: "2023-04-20T13:34:14.54966201Z"
+generated: "2023-04-20T17:25:59.556020293Z"
