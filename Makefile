@@ -1,5 +1,5 @@
-.PHONY: docs
-docs:
+.PHONY: readme
+readme:
 	helm-docs -c ./charts/otf -t ../../README.md.gotmpl -o ../../README.md
 
 # bump patch in chart version

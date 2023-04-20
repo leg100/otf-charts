@@ -9,9 +9,25 @@
 
 ```bash
 helm repo add otf https://leg100.github.io/otf-charts
-helm upgrade --install otf otf/otf
+helm install otf otf/otf
 ```
 
 {{ template "chart.valuesSection" . }}
 
 {{ template "helm-docs.versionFooter" . }}
+
+## Development
+
+Prior to creating a pull request you'll need to bump the chart version in `Chart.yaml`. You can use the following make task to automate this:
+
+```bash
+make bump
+```
+
+Then you need to re-generate the README. The README is generated from a template, `README.md.gotmpl`. The following make task generates the README from the template:
+
+```bash
+make readme
+```
+
+Any changes to the version or to the `values.yaml` file are automatically reflected in the generated README.
