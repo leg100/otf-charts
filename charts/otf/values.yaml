@@ -50,8 +50,11 @@ siteAdminToken: ""
 # -- Max config upload size in bytes. See [docs](https://docs.otf.ninja/config/flags/#-max-config-size).
 maxConfigSize: ""
 
-# -- Logging verbosity: error, info, debug, or trace
-logLevel: info
+logging:
+  # -- Logging verbosity, the higher the number the more verbose the logs. See [docs](https://docs.otf.ninja/config/flags/#-v).
+  verbosity: 0
+  # -- Logging format: default, text, or json. See [docs](https://docs.otf.ninja/config/flags/#-log-format)
+  format: default
 
 # -- Log http requests.
 logHTTPRequests: false
@@ -63,6 +66,10 @@ github:
 gitlab:
   clientID: ""
   clientSecret: ""
+
+google:
+  # -- The Google JWT audience claim for validation. Validation is skipped if empty. See [docs](https://docs.otf.ninja/config/flags/#-google-jwt-audience).
+  audience: ""
 
 serviceAccount:
   # Specifies whether a service account should be created

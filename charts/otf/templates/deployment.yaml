@@ -32,8 +32,10 @@ spec:
           env:
             - name: OTF_HOSTNAME
               value: "{{ .Values.hostname }}"
-            - name: OTF_LOG_LEVEL
-              value: "{{ .Values.logLevel }}"
+            - name: OTF_V
+              value: "{{ .Values.logging.verbosity }}"
+            - name: OTF_LOG_FORMAT
+              value: "{{ .Values.logging.format }}"
             - name: OTF_LOG_HTTP_REQUESTS
               value: "{{ .Values.logHTTPRequests }}"
             - name: OTF_DATABASE
@@ -68,6 +70,10 @@ spec:
               value: {{ .Values.gitlab.clientID }}
             - name: OTF_GITLAB_CLIENT_SECRET
               value: {{ .Values.gitlab.clientSecret }}
+            {{ with .Values.google.audience -}}
+            - name: OTF_GOOGLE_JWT_AUDIENCE
+              value: {{ .Values.database }}
+            {{- end }}
             - name: OTF_SANDBOX
               value: "{{ .Values.sandbox }}"
             {{ if .Values.CACerts -}}
