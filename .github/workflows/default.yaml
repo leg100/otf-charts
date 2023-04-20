@@ -14,13 +14,6 @@ jobs:
     steps:
       - name: Checkout
         uses: actions/checkout@v2
-        with:
-          fetch-depth: 0
-
-      - name: Install Helm
-        uses: azure/setup-helm@v3
-        with:
-          version: v3.10.0
 
       - name: Lint
         run: helm lint ./charts/otf
@@ -40,10 +33,10 @@ jobs:
       contents: write
     runs-on: ubuntu-latest
     steps:
-      - name: Install Helm
-        uses: azure/setup-helm@v3
+      - name: Checkout
+        uses: actions/checkout@v2
         with:
-          version: v3.10.0
+          fetch-depth: 0
 
       - name: Configure Git
         run: |
