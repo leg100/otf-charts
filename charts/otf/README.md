@@ -8,7 +8,7 @@ OTF helm charts.
 
 | Key | Type | Default | Description |
 |-----|------|---------|-------------|
-| CACerts | bool | `false` | Mount CA certificates - if true then the otfd container will expect to find a configmap named 'ssl-certs' with a key named 'ca.pem', which should contain CA certificates. The CA certificates are then made available to otfd and to terraform. Allows terraform to communicate with API endpoints that use custom CA certs. |
+| caCerts | bool | `false` | Mount CA certificates - if true then the otfd container will expect to find a configmap named 'ssl-certs' with a key named 'ca.pem', which should contain CA certificates. The CA certificates are then made available to otfd and to terraform. Allows terraform to communicate with API endpoints that use custom CA certs. |
 | affinity | object | `{}` |  |
 | autoscaling.enabled | bool | `false` |  |
 | autoscaling.maxReplicas | int | `100` |  |
@@ -51,7 +51,7 @@ OTF helm charts.
 | serviceAccount.create | bool | `true` |  |
 | serviceAccount.name | string | `""` |  |
 | serviceMonitor | object | `{"enabled":false}` | Collect prometheus metrics |
-| siteAdminToken | string | `""` | Site admin token - empty string disables site admin account. See [docs](https://docs.otf.ninja/config/flags/#-site-token). |
+| siteToken | string | `""` | Site admin token - empty string disables site admin account. See [docs](https://docs.otf.ninja/config/flags/#-site-token). |
 | tolerations | list | `[]` |  |
 
 ----------------------------------------------

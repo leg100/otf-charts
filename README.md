@@ -6,31 +6,54 @@
 
 ## Instructions
 
+Add the helm repository:
+
 ```bash
 helm repo add otf https://leg100.github.io/otf-charts
-helm install otf otf/otf
 ```
+
+To install the chart you need at the very minimum:
+
+* A PostgreSQL database up and running
+* A [secret string](https://docs.otf.ninja/config/flags#-secret)
+* Either setup an [identity provider](https://docs.otf.ninja/auth#identity-providers) or set a [site admin token](https://docs.otf.ninja/auth#site-admin).
+
+For example, if a PostgreSQL server is accessible via the hostname `postgres`, has a database named `otf` accessible to a user with username `postgres` and password `postgres`:
+
+```
+helm install otf otf/otf --set secret=my-secret --set site-token=my-token --set database=postgres://postgres:postgres@postgres/otf
+```
+
+Alternatively, you can use the [test-values.yaml](./charts/otf/test-values.yaml) from this repo:
+
+```
+helm install otf otf/otf -f ./charts/otf/test-values.yaml
+```
+
+This will:
+
+* Install PostgreSQL on the cluster
+* Set secret string
+* Set a site token
+
+Note: you should only use this for testing purposes.
 
 ## Values
 
 | Key | Type | Default | Description |
 |-----|------|---------|-------------|
-| CACerts | bool | `false` | Mount CA certificates - if true then the otfd container will expect to find a configmap named 'ssl-certs' with a key named 'ca.pem', which should contain CA certificates. The CA certificates are then made available to otfd and to terraform. Allows terraform to communicate with API endpoints that use custom CA certs. |
 | affinity | object | `{}` |  |
-| autoscaling.enabled | bool | `false` |  |
-| autoscaling.maxReplicas | int | `100` |  |
-| autoscaling.minReplicas | int | `1` |  |
-| autoscaling.targetCPUUtilizationPercentage | int | `80` |  |
+| caCerts | bool | `false` | Mount CA certificates - if true then the otfd container will expect to find a configmap named 'ssl-certs' with a key named 'ca.pem', which should contain CA certificates. The CA certificates are then made available to otfd and to terraform. Allows terraform to communicate with API endpoints that use custom CA certs. |
 | database | string | `""` | Postgres connection string |
 | databasePasswordFromSecret | object | `nil` | Source database password from a secret |
 | databaseUsernameFromSecret | object | `nil` | Source database username from a secret |
 | fullnameOverride | string | `""` |  |
-| github.clientID | string | `""` |  |
-| github.clientSecret | string | `""` |  |
-| gitlab.clientID | string | `""` |  |
-| gitlab.clientSecret | string | `""` |  |
+| github.clientID | string | `""` | Github OAuth client ID. See [docs](https://docs.otf.ninja/config/flags/#-github-client-id). |
+| github.clientSecret | string | `""` | Github OAuth client secret. See [docs](https://docs.otf.ninja/config/flags/#-github-client-secret). |
+| gitlab.clientID | string | `""` | Gitlab OAuth client ID. See [docs](https://docs.otf.ninja/config/flags/#-gitlab-client-id). |
+| gitlab.clientSecret | string | `""` | Gitlab OAuth client secret. See [docs](https://docs.otf.ninja/config/flags/#-gitlab-client-secret). |
 | google.audience | string | `""` | The Google JWT audience claim for validation. Validation is skipped if empty. See [docs](https://docs.otf.ninja/config/flags/#-google-jwt-audience). |
-| hostname | string | `""` | Set client-accessible hostname See [docs](https://docs.otf.ninja/config/flags/#-hostname). |
+| hostname | string | `""` | Set client-accessible hostname. See [docs](https://docs.otf.ninja/config/flags/#-hostname). |
 | image.pullPolicy | string | `"IfNotPresent"` |  |
 | image.repository | string | `"leg100/otfd"` |  |
 | image.tag | string | `""` |  |
@@ -47,21 +70,21 @@ helm install otf otf/otf
 | maxConfigSize | string | `""` | Max config upload size in bytes. See [docs](https://docs.otf.ninja/config/flags/#-max-config-size). |
 | nameOverride | string | `""` |  |
 | nodeSelector | object | `{}` |  |
-| podAnnotations | object | `{}` |  |
-| podSecurityContext | object | `{}` |  |
+| podAnnotations | object | `{}` | Add annotations to otfd pod |
+| podSecurityContext | object | `{}` | Set security context for otfd pod |
 | postgres.enabled | bool | `false` | Install postgres chart dependency. |
+| proxy | string | `nil` | Specify an https proxy for outbound connections. |
 | replicaCount | int | `1` | Number of otfd nodes in cluster |
 | resources | object | `{}` |  |
 | sandbox | bool | `false` | Enable sandboxing of terraform apply - note, this will run pods as privileged |
 | secret | string | `""` | Secret string for signing urls - required. |
-| securityContext | object | `{}` |  |
-| service.port | int | `80` |  |
-| service.type | string | `"ClusterIP"` |  |
-| serviceAccount.annotations | object | `{}` |  |
-| serviceAccount.create | bool | `true` |  |
-| serviceAccount.name | string | `""` |  |
+| service.port | int | `80` | Service port for otf |
+| service.type | string | `"ClusterIP"` | Service type for otf |
+| serviceAccount.annotations | object | `{}` | Annotations to add to the service account |
+| serviceAccount.create | bool | `true` | Specifies whether a service account should be created |
+| serviceAccount.name | string | `""` | The name of the service account to use. If not set and create is true, a name is generated using the fullname template |
 | serviceMonitor | object | `{"enabled":false}` | Collect prometheus metrics |
-| siteAdminToken | string | `""` | Site admin token - empty string disables site admin account. See [docs](https://docs.otf.ninja/config/flags/#-site-token). |
+| siteToken | string | `""` | Site admin token - empty string disables the site admin account. See [docs](https://docs.otf.ninja/config/flags/#-site-token). |
 | tolerations | list | `[]` |  |
 
 ----------------------------------------------

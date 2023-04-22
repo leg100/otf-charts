@@ -59,7 +59,7 @@ spec:
             - name: OTF_SECRET
               value: {{ .Values.secret }}
             - name: OTF_SITE_TOKEN
-              value: {{ .Values.siteAdminToken }}
+              value: {{ .Values.siteToken }}
             {{ if .Values.maxConfigSize }}
             - name: OTF_MAX_CONFIG_SIZE
               value: {{ .Values.maxConfigSize }}
@@ -78,7 +78,7 @@ spec:
             {{- end }}
             - name: OTF_SANDBOX
               value: "{{ .Values.sandbox }}"
-            {{ if .Values.CACerts -}}
+            {{ if .Values.caCerts -}}
             - name: SSL_CERT_DIR
               value: /certs
             {{- end }}
@@ -107,14 +107,14 @@ spec:
           volumeMounts:
           - name: tmp
             mountPath: /tmp
-          {{ if .Values.CACerts }}
+          {{ if .Values.caCerts }}
           - name: certs
             mountPath: /certs
           {{ end }}
       volumes:
         - name: tmp
           emptyDir:
-      {{ if .Values.CACerts }}
+      {{ if .Values.caCerts }}
         - name: certs
           configMap:
             name: certs
