@@ -1,6 +1,6 @@
 # otf-charts
 
-![Version: 0.2.6](https://img.shields.io/badge/Version-0.2.6-informational?style=flat-square) ![Type: application](https://img.shields.io/badge/Type-application-informational?style=flat-square) ![AppVersion: 0.0.36](https://img.shields.io/badge/AppVersion-0.0.36-informational?style=flat-square)
+![Version: 0.2.7](https://img.shields.io/badge/Version-0.2.7-informational?style=flat-square) ![Type: application](https://img.shields.io/badge/Type-application-informational?style=flat-square) ![AppVersion: 0.0.37](https://img.shields.io/badge/AppVersion-0.0.37-informational?style=flat-square)
 
 [OTF](https://github.com/leg100/otf) Helm charts.
 
@@ -99,7 +99,7 @@ If you make any changes to the chart you need to bump its version. You can eithe
 make bump
 ```
 
-Then re-generate the `README.md` from its template, `README.md.gotmpl`:
+To generate the `README.md` from its template, `README.md.gotmpl`:
 
 ```bash
 # requires `helm-docs`
@@ -107,3 +107,27 @@ make readme
 ```
 
 Any changes to the version or to the `values.yaml` file are automatically reflected in the generated `README.md`.
+
+To lint the chart:
+
+```bash
+make lint
+```
+
+To deploy the chart to a cluster to the namespace `otf-test` with pre-configured defaults along with PostgreSQL:
+
+```bash
+make deploy
+```
+
+To test the chart (assumes release is named `otf`):
+
+```bash
+make test
+```
+
+And to lint, deploy, and then test the chart:
+
+```bash
+make all
+```
