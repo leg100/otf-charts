@@ -1,3 +1,18 @@
+.PHONY: all
+all: lint deploy test
+
+.PHONY: lint
+lint:
+	helm lint ./charts/otf
+
+.PHONY: deploy
+deploy:
+	helm upgrade -i --create-namespace -n otf-test -f ./charts/otf/test-values.yaml otf ./charts/otf --wait
+
+.PHONY: test
+test: lint deploy
+	helm test otf
+
 .PHONY: readme
 readme:
 	helm-docs -c ./charts/otf -t ../../README.md.gotmpl -o ../../README.md

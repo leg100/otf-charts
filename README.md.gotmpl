@@ -52,7 +52,7 @@ If you make any changes to the chart you need to bump its version. You can eithe
 make bump
 ```
 
-Then re-generate the `README.md` from its template, `README.md.gotmpl`:
+To generate the `README.md` from its template, `README.md.gotmpl`:
 
 ```bash
 # requires `helm-docs`
@@ -60,3 +60,27 @@ make readme
 ```
 
 Any changes to the version or to the `values.yaml` file are automatically reflected in the generated `README.md`.
+
+To lint the chart:
+
+```bash
+make lint
+```
+
+To deploy the chart to a cluster to the namespace `otf-test` with pre-configured defaults along with PostgreSQL:
+
+```bash
+make deploy
+```
+
+To test the chart (assumes release is named `otf`):
+
+```bash
+make test
+```
+
+And to lint, deploy, and then test the chart:
+
+```bash
+make all
+```
