@@ -1,4 +1,4 @@
-secret: 7951f1c5d7b3757a2ed19086777fa8e64b87c02c6d059410433a8044d4c7e934
+secret: 2876cb147697052eec5b3cdb56211681
 siteToken: site-token
 database: postgres://otf-postgresql?user=postgres
 databasePasswordFromSecret:

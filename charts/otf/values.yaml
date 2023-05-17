@@ -43,7 +43,7 @@ databasePasswordFromSecret:
   # key within secret containing password
   # key: ""
 
-# -- Secret string for signing urls - required.
+# -- Cryptographic secret. Must be a hex-encoded 16-byte string. See [docs](https://docs.otf.ninja/config/flags/#-secret).
 secret: ""
 
 # -- Site admin token - empty string disables the site admin account. See [docs](https://docs.otf.ninja/config/flags/#-site-token).
