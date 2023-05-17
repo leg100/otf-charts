@@ -1,6 +1,6 @@
 # otf-charts
 
-![Version: 0.2.7](https://img.shields.io/badge/Version-0.2.7-informational?style=flat-square) ![Type: application](https://img.shields.io/badge/Type-application-informational?style=flat-square) ![AppVersion: 0.0.37](https://img.shields.io/badge/AppVersion-0.0.37-informational?style=flat-square)
+![Version: 0.2.10](https://img.shields.io/badge/Version-0.2.10-informational?style=flat-square) ![Type: application](https://img.shields.io/badge/Type-application-informational?style=flat-square) ![AppVersion: 0.0.40](https://img.shields.io/badge/AppVersion-0.0.40-informational?style=flat-square)
 
 [OTF](https://github.com/leg100/otf) Helm charts.
 
@@ -14,14 +14,14 @@ helm repo add otf https://leg100.github.io/otf-charts
 
 To install the chart you need at the very minimum:
 
-* A PostgreSQL database up and running
-* A [secret string](https://docs.otf.ninja/config/flags#-secret)
+* A PostgreSQL database up and running.
+* A hex-coded 16 byte [secret](https://docs.otf.ninja/config/flags#-secret).
 * Either setup an [identity provider](https://docs.otf.ninja/auth#identity-providers) or set a [site admin token](https://docs.otf.ninja/auth#site-admin).
 
 For example, if a PostgreSQL server is accessible via the hostname `postgres`, has a database named `otf` accessible to a user with username `postgres` and password `postgres`:
 
 ```
-helm install otf otf/otf --set secret=my-secret --set site-token=my-token --set database=postgres://postgres:postgres@postgres/otf
+helm install otf otf/otf --set secret=2876cb147697052eec5b3cdb56211681 --set site-token=my-token --set database=postgres://postgres:postgres@postgres/otf
 ```
 
 Alternatively, you can use the [test-values.yaml](./charts/otf/test-values.yaml) from this repo:
@@ -33,7 +33,7 @@ helm install otf otf/otf -f ./charts/otf/test-values.yaml
 This will:
 
 * Install PostgreSQL on the cluster
-* Set secret string
+* Set secret
 * Set a site token
 
 Note: you should only use this for testing purposes.
@@ -77,7 +77,7 @@ Note: you should only use this for testing purposes.
 | replicaCount | int | `1` | Number of otfd nodes in cluster |
 | resources | object | `{}` |  |
 | sandbox | bool | `false` | Enable sandboxing of terraform apply - note, this will run pods as privileged |
-| secret | string | `""` | Secret string for signing urls - required. |
+| secret | string | `""` | Cryptographic secret. Must be a hex-encoded 16-byte string. See [docs](https://docs.otf.ninja/config/flags/#-secret). |
 | service.port | int | `80` | Service port for otf |
 | service.type | string | `"ClusterIP"` | Service type for otf |
 | serviceAccount.annotations | object | `{}` | Annotations to add to the service account |
