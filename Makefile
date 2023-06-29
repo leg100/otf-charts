@@ -1,5 +1,5 @@
 .PHONY: all
-all: lint deploy test
+all: readme lint deploy test
 
 .PHONY: lint
 lint:

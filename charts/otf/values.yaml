@@ -49,6 +49,9 @@ secret: ""
 # -- Site admin token - empty string disables the site admin account. See [docs](https://docs.otf.ninja/config/flags/#-site-token).
 siteToken: ""
 
+# -- Site admins - list of user accounts promoted to site admin. See [docs](https://docs.otf.ninja/config/flags/#-site-admins).
+siteAdmins: []
+
 # -- Max config upload size in bytes. See [docs](https://docs.otf.ninja/config/flags/#-max-config-size).
 maxConfigSize: ""
 
