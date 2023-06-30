@@ -19,7 +19,7 @@ fullnameOverride: ""
 # System hostname used in links - if unset then a hostname is inferred
 # from the listening address. It's recommended you set this.
 
-# -- Set client-accessible hostname. See [docs](https://docs.otf.ninja/config/flags/#-hostname).
+# -- Set client-accessible hostname. See [docs](https://docs.otf.ninja/latest/config/flags/#-hostname).
 hostname: ""
 
 postgres:
@@ -43,40 +43,40 @@ databasePasswordFromSecret:
   # key within secret containing password
   # key: ""
 
-# -- Cryptographic secret. Must be a hex-encoded 16-byte string. See [docs](https://docs.otf.ninja/config/flags/#-secret).
+# -- Cryptographic secret. Must be a hex-encoded 16-byte string. See [docs](https://docs.otf.ninja/latest/config/flags/#-secret).
 secret: ""
 
-# -- Site admin token - empty string disables the site admin account. See [docs](https://docs.otf.ninja/config/flags/#-site-token).
+# -- Site admin token - empty string disables the site admin account. See [docs](https://docs.otf.ninja/latest/config/flags/#-site-token).
 siteToken: ""
 
-# -- Site admins - list of user accounts promoted to site admin. See [docs](https://docs.otf.ninja/config/flags/#-site-admins).
+# -- Site admins - list of user accounts promoted to site admin. See [docs](https://docs.otf.ninja/latest/config/flags/#-site-admins).
 siteAdmins: []
 
-# -- Max config upload size in bytes. See [docs](https://docs.otf.ninja/config/flags/#-max-config-size).
+# -- Max config upload size in bytes. See [docs](https://docs.otf.ninja/latest/config/flags/#-max-config-size).
 maxConfigSize: ""
 
 logging:
-  # -- Logging verbosity, the higher the number the more verbose the logs. See [docs](https://docs.otf.ninja/config/flags/#-v).
+  # -- Logging verbosity, the higher the number the more verbose the logs. See [docs](https://docs.otf.ninja/latest/config/flags/#-v).
   verbosity: 0
-  # -- Logging format: default, text, or json. See [docs](https://docs.otf.ninja/config/flags/#-log-format)
+  # -- Logging format: default, text, or json. See [docs](https://docs.otf.ninja/latest/config/flags/#-log-format)
   format: default
   # -- Log http requests.
   http: false
 
 github:
-  # -- Github OAuth client ID. See [docs](https://docs.otf.ninja/config/flags/#-github-client-id).
+  # -- Github OAuth client ID. See [docs](https://docs.otf.ninja/latest/config/flags/#-github-client-id).
   clientID: ""
-  # -- Github OAuth client secret. See [docs](https://docs.otf.ninja/config/flags/#-github-client-secret).
+  # -- Github OAuth client secret. See [docs](https://docs.otf.ninja/latest/config/flags/#-github-client-secret).
   clientSecret: ""
 
 gitlab:
-  # -- Gitlab OAuth client ID. See [docs](https://docs.otf.ninja/config/flags/#-gitlab-client-id).
+  # -- Gitlab OAuth client ID. See [docs](https://docs.otf.ninja/latest/config/flags/#-gitlab-client-id).
   clientID: ""
-  # -- Gitlab OAuth client secret. See [docs](https://docs.otf.ninja/config/flags/#-gitlab-client-secret).
+  # -- Gitlab OAuth client secret. See [docs](https://docs.otf.ninja/latest/config/flags/#-gitlab-client-secret).
   clientSecret: ""
 
 google:
-  # -- The Google JWT audience claim for validation. Validation is skipped if empty. See [docs](https://docs.otf.ninja/config/flags/#-google-jwt-audience).
+  # -- The Google JWT audience claim for validation. Validation is skipped if empty. See [docs](https://docs.otf.ninja/latest/config/flags/#-google-jwt-audience).
   audience: ""
 
 serviceAccount:
