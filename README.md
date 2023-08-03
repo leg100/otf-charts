@@ -1,6 +1,6 @@
 # otf-charts
 
-![Version: 0.2.20](https://img.shields.io/badge/Version-0.2.20-informational?style=flat-square) ![Type: application](https://img.shields.io/badge/Type-application-informational?style=flat-square) ![AppVersion: 0.1.0](https://img.shields.io/badge/AppVersion-0.1.0-informational?style=flat-square)
+![Version: 0.2.21](https://img.shields.io/badge/Version-0.2.21-informational?style=flat-square) ![Type: application](https://img.shields.io/badge/Type-application-informational?style=flat-square) ![AppVersion: 0.1.0](https://img.shields.io/badge/AppVersion-0.1.0-informational?style=flat-square)
 
 [OTF](https://github.com/leg100/otf) Helm charts.
 
@@ -78,6 +78,7 @@ Note: you should only use this for testing purposes.
 | resources | object | `{}` |  |
 | sandbox | bool | `false` | Enable sandboxing of terraform apply - note, this will run pods as privileged |
 | secret | string | `""` | Cryptographic secret. Must be a hex-encoded 16-byte string. See [docs](https://docs.otf.ninja/latest/config/flags/#-secret). |
+| service.annotations | object | `{}` |  |
 | service.port | int | `80` | Service port for otf |
 | service.type | string | `"ClusterIP"` | Service type for otf |
 | serviceAccount.annotations | object | `{}` | Annotations to add to the service account |
