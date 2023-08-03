@@ -99,6 +99,7 @@ service:
   type: ClusterIP
   # -- Service port for otf
   port: 80
+  annotations: {}
 
 ingress:
   enabled: false
