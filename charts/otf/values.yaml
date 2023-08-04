@@ -79,6 +79,17 @@ google:
   # -- The Google JWT audience claim for validation. Validation is skipped if empty. See [docs](https://docs.otf.ninja/latest/config/flags/#-google-jwt-audience).
   audience: ""
 
+oidc:
+  # -- values for configuring OIDC authentication. See [docs](https://docs.otf.ninja/latest/auth/providers/oidc/)
+  name: ""
+  issuerURL: ""
+  clientID: ""
+  clientSecretFromSecret:
+    # name of secret
+    # name: ""
+    # key within secret containing password
+    # key: ""
+
 serviceAccount:
   # -- Specifies whether a service account should be created
   create: true
