@@ -74,6 +74,21 @@ spec:
             - name: OTF_GOOGLE_JWT_AUDIENCE
               value: {{ . }}
             {{- end }}
+            {{ with .Values.oidc }}
+            - name: OTF_OIDC_NAME
+              value: {{ .name }}
+            - name: OTF_OIDC_ISSUER_URL
+              value: {{ .issuerURL }}
+            - name: OTF_OIDC_CLIENT_ID
+              value: {{ .clientID }}
+            {{ with .clientSecretFromSecret }}
+            - name: OTF_OIDC_CLIENT_SECRET
+              valueFrom:
+                secretKeyRef:
+                  name: {{ .name }}
+                  key: {{ .key }}
+            {{- end }}
+            {{- end }}
             - name: OTF_SANDBOX
               value: "{{ .Values.sandbox }}"
             {{ if .Values.caCerts -}}
