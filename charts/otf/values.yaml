@@ -84,6 +84,11 @@ oidc:
   name: ""
   issuerURL: ""
   clientID: ""
+  usernameClaim: ""
+  scopes:
+    - "openid"
+    - "profile"
+    - "email"
   clientSecretFromSecret:
     # name of secret
     # name: ""

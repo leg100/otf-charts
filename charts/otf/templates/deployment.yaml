@@ -81,6 +81,10 @@ spec:
               value: {{ .issuerURL }}
             - name: OTF_OIDC_CLIENT_ID
               value: {{ .clientID }}
+            - name: OTF_OIDC_USERNAME_CLAIM
+              value: {{ .usernameClaim }}
+            - name: OTF_OIDC_SCOPES
+              value: {{ .scopes | join "," }}
             {{ with .clientSecretFromSecret }}
             - name: OTF_OIDC_CLIENT_SECRET
               valueFrom:
