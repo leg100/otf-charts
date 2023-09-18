@@ -81,14 +81,18 @@ google:
 
 oidc:
   # -- values for configuring OIDC authentication. See [docs](https://docs.otf.ninja/latest/auth/providers/oidc/)
+
+  # -- OIDC provider name. See [docs](https://docs.otf.ninja/latest/auth/providers/oidc/).
   name: ""
+  # -- OIDC issuer URL. See [docs](https://docs.otf.ninja/latest/auth/providers/oidc/).
   issuerURL: ""
+  # -- OIDC client ID. See [docs](https://docs.otf.ninja/latest/auth/providers/oidc/).
   clientID: ""
+  # -- Override OIDC claim used for username. See [docs](https://docs.otf.ninja/latest/auth/providers/oidc/).
   usernameClaim: ""
-  scopes:
-    - "openid"
-    - "profile"
-    - "email"
+  # -- Override OIDC scopes. See [docs](https://docs.otf.ninja/latest/auth/providers/oidc/).
+  scopes: []
+  # -- (object) Source OIDC client secret from a k8s secret. See [docs](https://docs.otf.ninja/latest/auth/providers/oidc/).
   clientSecretFromSecret:
     # name of secret
     # name: ""
