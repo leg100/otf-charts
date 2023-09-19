@@ -1,6 +1,6 @@
 # otf-charts
 
-![Version: 0.2.28](https://img.shields.io/badge/Version-0.2.28-informational?style=flat-square) ![Type: application](https://img.shields.io/badge/Type-application-informational?style=flat-square) ![AppVersion: 0.1.13](https://img.shields.io/badge/AppVersion-0.1.13-informational?style=flat-square)
+![Version: 0.2.29](https://img.shields.io/badge/Version-0.2.29-informational?style=flat-square) ![Type: application](https://img.shields.io/badge/Type-application-informational?style=flat-square) ![AppVersion: 0.1.13](https://img.shields.io/badge/AppVersion-0.1.13-informational?style=flat-square)
 
 [OTF](https://github.com/leg100/otf) Helm charts.
 
@@ -70,10 +70,12 @@ Note: you should only use this for testing purposes.
 | maxConfigSize | string | `""` | Max config upload size in bytes. See [docs](https://docs.otf.ninja/latest/config/flags/#-max-config-size). |
 | nameOverride | string | `""` |  |
 | nodeSelector | object | `{}` |  |
-| oidc.clientID | string | `""` |  |
-| oidc.clientSecretFromSecret | string | `nil` |  |
-| oidc.issuerURL | string | `""` |  |
-| oidc.name | string | `""` | values for configuring OIDC authentication. See [docs](https://docs.otf.ninja/latest/auth/providers/oidc/) |
+| oidc.clientID | string | `""` | OIDC client ID. See [docs](https://docs.otf.ninja/latest/auth/providers/oidc/). |
+| oidc.clientSecretFromSecret | object | `nil` | Source OIDC client secret from a k8s secret. See [docs](https://docs.otf.ninja/latest/auth/providers/oidc/). |
+| oidc.issuerURL | string | `""` | OIDC issuer URL. See [docs](https://docs.otf.ninja/latest/auth/providers/oidc/). |
+| oidc.name | string | `""` | OIDC provider name. See [docs](https://docs.otf.ninja/latest/auth/providers/oidc/). |
+| oidc.scopes | list | `[]` | Override OIDC scopes. See [docs](https://docs.otf.ninja/latest/auth/providers/oidc/). |
+| oidc.usernameClaim | string | `""` | Override OIDC claim used for username. See [docs](https://docs.otf.ninja/latest/auth/providers/oidc/). |
 | podAnnotations | object | `{}` | Add annotations to otfd pod |
 | podSecurityContext | object | `{}` | Set security context for otfd pod |
 | postgres.enabled | bool | `false` | Install postgres chart dependency. |
