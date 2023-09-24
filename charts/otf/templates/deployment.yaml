@@ -141,11 +141,15 @@ spec:
           emptyDir:
       {{ if .Values.caCerts }}
         - name: certs
+          {{- if .Values.caCertsVolume }}
+          {{- toYaml .Values.caCertsVolume | nindent 8 }}
+          {{- else }}
           configMap:
             name: certs
             items:
               - key: ca.pem
                 path: ca.pem
+          {{- end }}
       {{ end }}
       {{- with .Values.nodeSelector }}
       nodeSelector:

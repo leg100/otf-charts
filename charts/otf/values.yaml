@@ -150,6 +150,10 @@ sandbox: false
 # Allows terraform to communicate with API endpoints that use custom CA certs.
 caCerts: false
 
+# -- Defines the properties of the volume that will be created to hold the CA certs on the otfd pod.
+# if no volume is specified then the default configmap volume will be used.
+caCertsVolume:
+
 # -- Specify an https proxy for outbound connections.
 proxy:
 
