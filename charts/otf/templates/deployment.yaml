@@ -142,7 +142,7 @@ spec:
       {{ if .Values.caCerts }}
         - name: certs
           {{- if .Values.caCertsVolume }}
-          {{- toYaml .Values.caCertsVolume | nindent 8 }}
+          {{- toYaml .Values.caCertsVolume | nindent 10 }}
           {{- else }}
           configMap:
             name: certs
