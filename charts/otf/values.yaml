@@ -152,10 +152,6 @@ caCerts:
   # -- Specify individual items in secret containing CA certificates. Use the [KeyToPath](https://kubernetes.io/docs/reference/generated/kubernetes-api/v1.28/#keytopath-v1-core) schema for each item. If unspecified, all items are mounted from the secret.
   secretItems: []
 
-# -- Defines the properties of the volume that will be created to hold the CA certs on the otfd pod.
-# if no volume is specified then the default configmap volume will be used.
-caCertsVolume:
-
 # -- Specify an https proxy for outbound connections.
 proxy:
 
