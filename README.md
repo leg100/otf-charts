@@ -1,6 +1,6 @@
 # otf-charts
 
-![Version: 0.2.30](https://img.shields.io/badge/Version-0.2.30-informational?style=flat-square) ![Type: application](https://img.shields.io/badge/Type-application-informational?style=flat-square) ![AppVersion: 0.1.13](https://img.shields.io/badge/AppVersion-0.1.13-informational?style=flat-square)
+![Version: 0.3.0](https://img.shields.io/badge/Version-0.3.0-informational?style=flat-square) ![Type: application](https://img.shields.io/badge/Type-application-informational?style=flat-square) ![AppVersion: 0.1.13](https://img.shields.io/badge/AppVersion-0.1.13-informational?style=flat-square)
 
 [OTF](https://github.com/leg100/otf) Helm charts.
 
@@ -43,7 +43,9 @@ Note: you should only use this for testing purposes.
 | Key | Type | Default | Description |
 |-----|------|---------|-------------|
 | affinity | object | `{}` |  |
-| caCerts | bool | `false` | Mount CA certificates - if true then the otfd container will expect to find a configmap named 'ssl-certs' with a key named 'ca.pem', which should contain CA certificates. The CA certificates are then made available to otfd and to terraform. Allows terraform to communicate with API endpoints that use custom CA certs. |
+| caCerts.enabled | bool | `false` | Mount a secret containing CA certificates and make them available to both terraform and otfd, allowing them to communicate with API endpoints that use custom CA certificates. |
+| caCerts.secretItems | list | `[]` | Specify individual items in secret containing CA certificates. Use the [KeyToPath](https://kubernetes.io/docs/reference/generated/kubernetes-api/v1.28/#keytopath-v1-core) schema for each item. If unspecified, all items are mounted from the secret. |
+| caCerts.secretName | string | `"certs"` | Name of secret containing the CA certificates to mount. |
 | caCertsVolume | string | `nil` | Defines the properties of the volume that will be created to hold the CA certs on the otfd pod. if no volume is specified then the default configmap volume will be used. |
 | database | string | `""` | Postgres connection string |
 | databasePasswordFromSecret | object | `nil` | Source database password from a secret |
