@@ -145,11 +145,8 @@ spec:
             secretName: {{ .Values.caCerts.secretName }}
             {{ with .Values.caCerts.secretItems -}}
             items:
-              {{ range . -}}
-              - key: {{ .key }}
-                path: {{ .path }}
-              {{ end }}
-            {{ end }}
+              {{- toYaml . | nindent 14 }}
+            {{- end }}
         {{- end }}
       {{- with .Values.nodeSelector }}
       nodeSelector:
