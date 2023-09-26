@@ -99,7 +99,7 @@ spec:
             {{- end }}
             - name: OTF_SANDBOX
               value: "{{ .Values.sandbox }}"
-            {{ if .Values.caCerts -}}
+            {{ if .Values.caCerts.enabled -}}
             - name: SSL_CERT_DIR
               value: /certs
             {{- end }}
@@ -132,21 +132,22 @@ spec:
           volumeMounts:
           - name: tmp
             mountPath: /tmp
-          {{ if .Values.caCerts }}
+          {{ if .Values.caCerts.enabled -}}
           - name: certs
             mountPath: /certs
           {{ end }}
       volumes:
         - name: tmp
           emptyDir:
-      {{ if .Values.caCerts }}
+        {{ if .Values.caCerts.enabled -}}
         - name: certs
-          configMap:
-            name: certs
+          secret:
+            secretName: {{ .Values.caCerts.secretName }}
+            {{ with .Values.caCerts.secretItems -}}
             items:
-              - key: ca.pem
-                path: ca.pem
-      {{ end }}
+              {{- toYaml . | nindent 14 }}
+            {{- end }}
+        {{- end }}
       {{- with .Values.nodeSelector }}
       nodeSelector:
         {{- toYaml . | nindent 8 }}
