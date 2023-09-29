@@ -106,6 +106,18 @@ spec:
             {{ with .Values.proxy -}}
             - name: HTTPS_PROXY
               value: "{{ . }}"
+            - name: HTTP_PROXY
+              value: "{{ . }}"
+            - name: https_proxy
+              value: "{{ . }}"
+            - name: http_proxy
+              value: "{{ . }}"
+            {{- end }}
+            {{ with .Values.no_proxy -}}
+            - name: NO_PROXY
+              value: "{{ . }}"
+            - name: no_proxy
+              value: "{{ . }}"
             {{- end }}
             {{ with .Values.siteAdmins -}}
             - name: OTF_SITE_ADMINS
