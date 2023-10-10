@@ -71,6 +71,7 @@ Note: you should only use this for testing purposes.
 | logging.verbosity | int | `0` | Logging verbosity, the higher the number the more verbose the logs. See [docs](https://docs.otf.ninja/latest/config/flags/#-v). |
 | maxConfigSize | string | `""` | Max config upload size in bytes. See [docs](https://docs.otf.ninja/latest/config/flags/#-max-config-size). |
 | nameOverride | string | `""` |  |
+| no_proxy | string | `nil` | Specify hosts for which outbound connections should not use the proxy. |
 | nodeSelector | object | `{}` |  |
 | oidc.clientID | string | `""` | OIDC client ID. See [docs](https://docs.otf.ninja/latest/auth/providers/oidc/). |
 | oidc.clientSecretFromSecret | object | `nil` | Source OIDC client secret from a k8s secret. See [docs](https://docs.otf.ninja/latest/auth/providers/oidc/). |
@@ -81,7 +82,7 @@ Note: you should only use this for testing purposes.
 | podAnnotations | object | `{}` | Add annotations to otfd pod |
 | podSecurityContext | object | `{}` | Set security context for otfd pod |
 | postgres.enabled | bool | `false` | Install postgres chart dependency. |
-| proxy | string | `nil` | Specify an https proxy for outbound connections. |
+| proxy | string | `nil` | Specify an http(s) proxy for outbound connections. |
 | replicaCount | int | `1` | Number of otfd nodes in cluster |
 | resources | object | `{}` |  |
 | sandbox | bool | `false` | Enable sandboxing of terraform apply - note, this will run pods as privileged |

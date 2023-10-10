@@ -152,8 +152,10 @@ caCerts:
   # -- Specify individual items in secret containing CA certificates. Use the [KeyToPath](https://kubernetes.io/docs/reference/generated/kubernetes-api/v1.28/#keytopath-v1-core) schema for each item. If unspecified, all items are mounted from the secret.
   secretItems: []
 
-# -- Specify an https proxy for outbound connections.
+# -- Specify an http(s) proxy for outbound connections.
 proxy:
+# -- Specify hosts for which outbound connections should not use the proxy.
+no_proxy:
 
 resources: {}
   # We usually recommend not to specify default resources and to leave this as a conscious
