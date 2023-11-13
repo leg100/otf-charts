@@ -60,7 +60,7 @@ spec:
               value: {{ .Values.siteToken }}
             {{ if .Values.maxConfigSize }}
             - name: OTF_MAX_CONFIG_SIZE
-              value: {{ .Values.maxConfigSize }}
+              value: "{{ .Values.maxConfigSize }}"
             {{ end }}
             - name: OTF_GITHUB_CLIENT_ID
               value: {{ .Values.github.clientID }}
