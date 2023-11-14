@@ -43,6 +43,9 @@ databasePasswordFromSecret:
   # key within secret containing password
   # key: ""
 
+# -- Extra environment variables to be passed to the deployment.
+extraEnvs: []
+
 # -- Cryptographic secret. Must be a hex-encoded 16-byte string. See [docs](https://docs.otf.ninja/latest/config/flags/#-secret).
 secret: ""
 
