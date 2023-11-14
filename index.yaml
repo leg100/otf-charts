@@ -3,6 +3,21 @@ entries:
   otf:
   - apiVersion: v2
     appVersion: 0.1.18
+    created: "2023-11-14T21:35:44.491711286Z"
+    dependencies:
+    - condition: postgres.enabled
+      name: postgresql
+      repository: https://charts.bitnami.com/bitnami
+      version: 12.8.*
+    description: OTF helm charts.
+    digest: 2c21201bf3d95d829a3b7f54f750c6b61a9624411b3220b6876ecb502984de7c
+    name: otf
+    type: application
+    urls:
+    - https://github.com/leg100/otf-charts/releases/download/otf-0.3.6/otf-0.3.6.tgz
+    version: 0.3.6
+  - apiVersion: v2
+    appVersion: 0.1.18
     created: "2023-10-30T09:12:24.911541842Z"
     dependencies:
     - condition: postgres.enabled
@@ -640,4 +655,4 @@ entries:
     urls:
     - https://github.com/leg100/otf-charts/releases/download/otf-0.1.1/otf-0.1.1.tgz
     version: 0.1.1
-generated: "2023-10-30T09:12:24.912642266Z"
+generated: "2023-11-14T21:35:44.492091162Z"
