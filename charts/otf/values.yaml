@@ -48,6 +48,11 @@ extraEnvs: []
 
 # -- Cryptographic secret. Must be a hex-encoded 16-byte string. See [docs](https://docs.otf.ninja/latest/config/flags/#-secret).
 secret: ""
+secretFromSecret:
+  # name of secret
+  # name: ""
+  # key within secret containing cryptographic secret
+  # key: ""
 
 # -- Site admin token - empty string disables the site admin account. See [docs](https://docs.otf.ninja/latest/config/flags/#-site-token).
 siteToken: ""

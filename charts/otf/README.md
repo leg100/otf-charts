@@ -44,6 +44,7 @@ OTF helm charts.
 | resources | object | `{}` |  |
 | sandbox | bool | `false` | Enable sandboxing of terraform apply - note, this will run pods as privileged |
 | secret | string | `""` | Secret string for signing urls - required. |
+| secretFromSecret | string | `nil` | Source secret from a kubernetes secret |
 | securityContext | object | `{}` |  |
 | service.port | int | `80` |  |
 | service.type | string | `"ClusterIP"` |  |
