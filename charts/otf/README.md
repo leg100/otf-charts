@@ -20,8 +20,10 @@ OTF helm charts.
 | fullnameOverride | string | `""` |  |
 | github.clientID | string | `""` |  |
 | github.clientSecret | string | `""` |  |
+| github.hostname | string | `"https://github.com"` |  |
 | gitlab.clientID | string | `""` |  |
 | gitlab.clientSecret | string | `""` |  |
+| gitlab.hostname | string | `"https://gitlab.com"` |  |
 | hostname | string | `""` | Set client-accessible hostname See [docs](https://docs.otf.ninja/config/flags/#-hostname). |
 | image.pullPolicy | string | `"IfNotPresent"` |  |
 | image.repository | string | `"leg100/otfd"` |  |

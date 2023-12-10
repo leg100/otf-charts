@@ -71,12 +71,16 @@ github:
   clientID: ""
   # -- Github OAuth client secret. See [docs](https://docs.otf.ninja/latest/config/flags/#-github-client-secret).
   clientSecret: ""
+  # -- Github hostname to use for VCS connections
+  hostname: "https://github.com"
 
 gitlab:
   # -- Gitlab OAuth client ID. See [docs](https://docs.otf.ninja/latest/config/flags/#-gitlab-client-id).
   clientID: ""
   # -- Gitlab OAuth client secret. See [docs](https://docs.otf.ninja/latest/config/flags/#-gitlab-client-secret).
   clientSecret: ""
+  # -- Gitlab hostname to use for VCS connections
+  hostname: "https://gitlab.com"
 
 google:
   # -- The Google JWT audience claim for validation. Validation is skipped if empty. See [docs](https://docs.otf.ninja/latest/config/flags/#-google-jwt-audience).
