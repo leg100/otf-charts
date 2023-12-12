@@ -59,13 +59,11 @@ spec:
                   key: {{ .key }}
             {{ end }}
             - name: OTF_SECRET
-            {{ if .Values.secretFromSecret }}
             {{ with .Values.secretFromSecret }}
               valueFrom:
                 secretKeyRef:
                   name: {{ .name }}
                   key: {{ .key }}
-            {{ end }}
             {{ else }}
               value: {{ .Values.secret }}
             {{ end }}

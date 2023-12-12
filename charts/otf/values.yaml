@@ -48,7 +48,8 @@ extraEnvs: []
 
 # -- Cryptographic secret. Must be a hex-encoded 16-byte string. See [docs](https://docs.otf.ninja/latest/config/flags/#-secret).
 secret: ""
-secretFromSecret:
+# -- Source cryptographic secret from a kubernetes secret instead.
+secretFromSecret: {}
   # name of secret
   # name: ""
   # key within secret containing cryptographic secret

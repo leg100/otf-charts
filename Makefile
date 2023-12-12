@@ -11,7 +11,7 @@ deploy:
 
 .PHONY: test
 test: lint deploy
-	helm test otf
+	helm test -n otf-test otf
 
 .PHONY: readme
 readme:
