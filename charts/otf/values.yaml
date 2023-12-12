@@ -46,6 +46,11 @@ databasePasswordFromSecret:
 # -- Extra environment variables to be passed to the deployment.
 extraEnvs: []
 
+# -- Environment variables to be passed to the deployment from a secret.
+envFrom: {}
+  # - secretRef:
+  #     name: my-secret
+
 # -- Cryptographic secret. Must be a hex-encoded 16-byte string. See [docs](https://docs.otf.ninja/latest/config/flags/#-secret).
 secret: ""
 

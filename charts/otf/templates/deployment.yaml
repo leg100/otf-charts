@@ -27,6 +27,9 @@ spec:
         {{- toYaml .Values.podSecurityContext | nindent 8 }}
       containers:
         - name: {{ .Chart.Name }}
+          {{- with .Values.envFrom }}
+          envFrom: {{- toYaml . | nindent 12 }}
+          {{- end }}
           env:
 {{- range $key, $value := .Values.extraEnvs }}
             - name: {{ $key }}
