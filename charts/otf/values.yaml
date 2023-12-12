@@ -71,7 +71,7 @@ github:
   clientID: ""
   # -- Github OAuth client secret. See [docs](https://docs.otf.ninja/latest/config/flags/#-github-client-secret).
   clientSecret: ""
-  # -- Github hostname to use for VCS connections
+  # -- Github hostname to use for all interactions with Github.
   hostname: "https://github.com"
 
 gitlab:
@@ -79,7 +79,7 @@ gitlab:
   clientID: ""
   # -- Gitlab OAuth client secret. See [docs](https://docs.otf.ninja/latest/config/flags/#-gitlab-client-secret).
   clientSecret: ""
-  # -- Gitlab hostname to use for VCS connections
+  # -- Gitlab hostname to use for all interactions with Gitlab.
   hostname: "https://gitlab.com"
 
 google:
