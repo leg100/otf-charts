@@ -59,7 +59,14 @@ spec:
                   key: {{ .key }}
             {{ end }}
             - name: OTF_SECRET
+            {{ with .Values.secretFromSecret }}
+              valueFrom:
+                secretKeyRef:
+                  name: {{ .name }}
+                  key: {{ .key }}
+            {{ else }}
               value: {{ .Values.secret }}
+            {{ end }}
             - name: OTF_SITE_TOKEN
               value: {{ .Values.siteToken }}
             {{ if .Values.maxConfigSize }}
