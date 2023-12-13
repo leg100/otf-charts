@@ -1,6 +1,6 @@
 # otf-charts
 
-![Version: 0.3.9](https://img.shields.io/badge/Version-0.3.9-informational?style=flat-square) ![Type: application](https://img.shields.io/badge/Type-application-informational?style=flat-square) ![AppVersion: 0.2.3](https://img.shields.io/badge/AppVersion-0.2.3-informational?style=flat-square)
+![Version: 0.3.10](https://img.shields.io/badge/Version-0.3.10-informational?style=flat-square) ![Type: application](https://img.shields.io/badge/Type-application-informational?style=flat-square) ![AppVersion: 0.2.3](https://img.shields.io/badge/AppVersion-0.2.3-informational?style=flat-square)
 
 [OTF](https://github.com/leg100/otf) Helm charts.
 
@@ -49,6 +49,7 @@ Note: you should only use this for testing purposes.
 | database | string | `""` | Postgres connection string |
 | databasePasswordFromSecret | object | `nil` | Source database password from a secret |
 | databaseUsernameFromSecret | object | `nil` | Source database username from a secret |
+| envsFromSecret | string | `""` | Environment variables to be passed to the deployment from the named kubernetes secret. |
 | extraEnvs | list | `[]` | Extra environment variables to be passed to the deployment. |
 | fullnameOverride | string | `""` |  |
 | github.clientID | string | `""` | Github OAuth client ID. See [docs](https://docs.otf.ninja/latest/config/flags/#-github-client-id). |
