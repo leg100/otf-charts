@@ -62,7 +62,14 @@ spec:
                   key: {{ .key }}
             {{ end }}
             - name: OTF_SECRET
+            {{ with .Values.secretFromSecret }}
+              valueFrom:
+                secretKeyRef:
+                  name: {{ .name }}
+                  key: {{ .key }}
+            {{ else }}
               value: {{ .Values.secret }}
+            {{ end }}
             - name: OTF_SITE_TOKEN
               value: {{ .Values.siteToken }}
             {{ if .Values.maxConfigSize }}
@@ -73,10 +80,14 @@ spec:
               value: {{ .Values.github.clientID }}
             - name: OTF_GITHUB_CLIENT_SECRET
               value: {{ .Values.github.clientSecret }}
+            - name: OTF_GITHUB_HOSTNAME
+              value: {{ .Values.github.hostname }}
             - name: OTF_GITLAB_CLIENT_ID
               value: {{ .Values.gitlab.clientID }}
             - name: OTF_GITLAB_CLIENT_SECRET
               value: {{ .Values.gitlab.clientSecret }}
+            - name: OTF_GITLAB_HOSTNAME
+              value: {{ .Values.gitlab.hostname }}
             {{ with .Values.google.audience -}}
             - name: OTF_GOOGLE_JWT_AUDIENCE
               value: {{ . }}

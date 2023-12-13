@@ -53,6 +53,12 @@ envFrom: {}
 
 # -- Cryptographic secret. Must be a hex-encoded 16-byte string. See [docs](https://docs.otf.ninja/latest/config/flags/#-secret).
 secret: ""
+# -- Source cryptographic secret from a kubernetes secret instead.
+secretFromSecret: {}
+  # name of secret
+  # name: ""
+  # key within secret containing cryptographic secret
+  # key: ""
 
 # -- Site admin token - empty string disables the site admin account. See [docs](https://docs.otf.ninja/latest/config/flags/#-site-token).
 siteToken: ""
@@ -76,12 +82,16 @@ github:
   clientID: ""
   # -- Github OAuth client secret. See [docs](https://docs.otf.ninja/latest/config/flags/#-github-client-secret).
   clientSecret: ""
+  # -- Github hostname to use for all interactions with Github.
+  hostname: "https://github.com"
 
 gitlab:
   # -- Gitlab OAuth client ID. See [docs](https://docs.otf.ninja/latest/config/flags/#-gitlab-client-id).
   clientID: ""
   # -- Gitlab OAuth client secret. See [docs](https://docs.otf.ninja/latest/config/flags/#-gitlab-client-secret).
   clientSecret: ""
+  # -- Gitlab hostname to use for all interactions with Gitlab.
+  hostname: "https://gitlab.com"
 
 google:
   # -- The Google JWT audience claim for validation. Validation is skipped if empty. See [docs](https://docs.otf.ninja/latest/config/flags/#-google-jwt-audience).
