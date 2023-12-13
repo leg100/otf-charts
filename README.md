@@ -1,6 +1,6 @@
 # otf-charts
 
-![Version: 0.3.9](https://img.shields.io/badge/Version-0.3.9-informational?style=flat-square) ![Type: application](https://img.shields.io/badge/Type-application-informational?style=flat-square) ![AppVersion: 0.2.3](https://img.shields.io/badge/AppVersion-0.2.3-informational?style=flat-square)
+![Version: 0.3.10](https://img.shields.io/badge/Version-0.3.10-informational?style=flat-square) ![Type: application](https://img.shields.io/badge/Type-application-informational?style=flat-square) ![AppVersion: 0.2.3](https://img.shields.io/badge/AppVersion-0.2.3-informational?style=flat-square)
 
 [OTF](https://github.com/leg100/otf) Helm charts.
 
@@ -53,10 +53,10 @@ Note: you should only use this for testing purposes.
 | fullnameOverride | string | `""` |  |
 | github.clientID | string | `""` | Github OAuth client ID. See [docs](https://docs.otf.ninja/latest/config/flags/#-github-client-id). |
 | github.clientSecret | string | `""` | Github OAuth client secret. See [docs](https://docs.otf.ninja/latest/config/flags/#-github-client-secret). |
-| github.hostname | string | `"https://github.com"` | Github hostname to use for all interactions with Github. |
+| github.hostname | string | `"github.com"` | Github hostname to use for all interactions with Github. |
 | gitlab.clientID | string | `""` | Gitlab OAuth client ID. See [docs](https://docs.otf.ninja/latest/config/flags/#-gitlab-client-id). |
 | gitlab.clientSecret | string | `""` | Gitlab OAuth client secret. See [docs](https://docs.otf.ninja/latest/config/flags/#-gitlab-client-secret). |
-| gitlab.hostname | string | `"https://gitlab.com"` | Gitlab hostname to use for all interactions with Gitlab. |
+| gitlab.hostname | string | `"gitlab.com"` | Gitlab hostname to use for all interactions with Gitlab. |
 | google.audience | string | `""` | The Google JWT audience claim for validation. Validation is skipped if empty. See [docs](https://docs.otf.ninja/latest/config/flags/#-google-jwt-audience). |
 | hostname | string | `""` | Set client-accessible hostname. See [docs](https://docs.otf.ninja/latest/config/flags/#-hostname). |
 | image.pullPolicy | string | `"IfNotPresent"` |  |
