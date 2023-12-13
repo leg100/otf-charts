@@ -46,6 +46,9 @@ databasePasswordFromSecret:
 # -- Extra environment variables to be passed to the deployment.
 extraEnvs: []
 
+# -- Environment variables to be passed to the deployment from the named kubernetes secret.
+envsFromSecret: ""
+
 # -- Cryptographic secret. Must be a hex-encoded 16-byte string. See [docs](https://docs.otf.ninja/latest/config/flags/#-secret).
 secret: ""
 # -- Source cryptographic secret from a kubernetes secret instead.
