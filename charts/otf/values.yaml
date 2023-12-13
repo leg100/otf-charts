@@ -78,7 +78,7 @@ github:
   # -- Github OAuth client secret. See [docs](https://docs.otf.ninja/latest/config/flags/#-github-client-secret).
   clientSecret: ""
   # -- Github hostname to use for all interactions with Github.
-  hostname: "https://github.com"
+  hostname: "github.com"
 
 gitlab:
   # -- Gitlab OAuth client ID. See [docs](https://docs.otf.ninja/latest/config/flags/#-gitlab-client-id).
@@ -86,7 +86,7 @@ gitlab:
   # -- Gitlab OAuth client secret. See [docs](https://docs.otf.ninja/latest/config/flags/#-gitlab-client-secret).
   clientSecret: ""
   # -- Gitlab hostname to use for all interactions with Gitlab.
-  hostname: "https://gitlab.com"
+  hostname: "gitlab.com"
 
 google:
   # -- The Google JWT audience claim for validation. Validation is skipped if empty. See [docs](https://docs.otf.ninja/latest/config/flags/#-google-jwt-audience).
