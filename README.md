@@ -51,18 +51,18 @@ helm lint ./charts/otf
 helm lint ./charts/otf-agent
 ```
 
-### Deploy and test
+### Deploy and test otf chart
 
-To deploy the chart to a cluster to the namespace `otf-test` with pre-configured defaults along with PostgreSQL:
+To deploy the `./charts/otf` chart to a cluster to the namespace `otf-test` with pre-configured defaults along with PostgreSQL:
 
 ```bash
-make deploy
+make deploy-otf
 ```
 
 To test the chart (assumes release is named `otf`):
 
 ```bash
-make test
+make test-otf
 ```
 
 And to lint, deploy, and then test the chart:

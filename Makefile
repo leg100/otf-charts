@@ -1,12 +1,12 @@
 .PHONY: all
 all: deploy test
 
-.PHONY: deploy
-deploy:
+.PHONY: deploy-otf
+deploy-otf:
 	helm upgrade -i --create-namespace -n otf-test -f ./charts/otf/test-values.yaml otf ./charts/otf --wait
 
-.PHONY: test
-test: lint deploy
+.PHONY: test-otf
+test-otf: deploy-otf
 	helm test -n otf-test otf
 
 .PHONY: bump
