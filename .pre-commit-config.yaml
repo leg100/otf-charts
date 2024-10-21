@@ -3,7 +3,3 @@ repos:
     rev: v1.2.0
     hooks:
       - id: helm-docs
-        args:
-          - -c=./charts/otf
-          - -t=../../README.md.gotmpl
-          - -o=../../README.md

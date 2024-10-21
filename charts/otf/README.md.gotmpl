@@ -1,17 +1,13 @@
-# otf-charts
+# Helm chart for `otfd`
 {{ template "chart.deprecationWarning" . }}
 
 {{ template "chart.badgesSection" . }}
 
-[OTF](https://github.com/leg100/otf) Helm charts.
+Installs the [otf](https://github.com/leg100/otf) daemon.
 
-## Instructions
+## Usage
 
-Add the helm repository:
-
-```bash
-helm repo add otf https://leg100.github.io/otf-charts
-```
+First, follow the instructions in the repo [README.md](../../README.md) to add the helm repository.
 
 To install the chart you need at the very minimum:
 
@@ -42,45 +38,3 @@ Note: you should only use this for testing purposes.
 {{ template "chart.valuesSection" . }}
 
 {{ template "helm-docs.versionFooter" . }}
-
-## Development
-
-If you make any changes to the chart you need to bump its version. You can either do that by hand in `Chart.yaml`, or using `make`:
-
-```bash
-# requires `yq`
-make bump
-```
-
-To generate the `README.md` from its template, `README.md.gotmpl`:
-
-```bash
-# requires `helm-docs`
-make readme
-```
-
-Any changes to the version or to the `values.yaml` file are automatically reflected in the generated `README.md`.
-
-To lint the chart:
-
-```bash
-make lint
-```
-
-To deploy the chart to a cluster to the namespace `otf-test` with pre-configured defaults along with PostgreSQL:
-
-```bash
-make deploy
-```
-
-To test the chart (assumes release is named `otf`):
-
-```bash
-make test
-```
-
-And to lint, deploy, and then test the chart:
-
-```bash
-make all
-```

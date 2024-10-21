@@ -1,23 +1,14 @@
 .PHONY: all
-all: readme lint deploy test
+all: deploy test
 
-.PHONY: lint
-lint:
-	helm lint ./charts/otf
-
-.PHONY: deploy
-deploy:
+.PHONY: deploy-otf
+deploy-otf:
 	helm upgrade -i --create-namespace -n otf-test -f ./charts/otf/test-values.yaml otf ./charts/otf --wait
 
-.PHONY: test
-test: lint deploy
+.PHONY: test-otf
+test-otf: deploy-otf
 	helm test -n otf-test otf
 
-.PHONY: readme
-readme:
-	helm-docs -c ./charts/otf -t ../../README.md.gotmpl -o ../../README.md
-
-# bump patch in chart version
 .PHONY: bump
 bump:
-	yq -i '.version |= (split(".") | .[-1] |= ((. tag = "!!int") + 1) | join("."))' ./charts/otf/Chart.yaml
+	yq -i '.version |= (split(".") | .[-1] |= ((. tag = "!!int") + 1) | join("."))' ./charts/${CHART}/Chart.yaml
