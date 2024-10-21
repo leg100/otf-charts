@@ -15,7 +15,13 @@ jobs:
       - name: Checkout
         uses: actions/checkout@v2
       - name: Lint
-        run: helm lint ./charts/otf
+        run: |
+          helm lint ./charts/otf
+          helm lint ./charts/otf-agent
+      - name: Render
+        run: |
+          helm template ./charts/otf
+          helm template ./charts/otf-agent --set token=my_agent_token --set address=https://otf.ninja
       - name: Create kind cluster
         uses: helm/kind-action@v1.8.0
       - name: Test

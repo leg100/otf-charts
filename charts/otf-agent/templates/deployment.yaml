@@ -41,23 +41,23 @@ spec:
             - name: OTF_ADDRESS
               value: "{{ required "An address is required" .Values.address }}"
             {{- with .Values.logging }}
-            {{ with .verbosity }}
+            {{- with .verbosity }}
             - name: OTF_V
               value: "{{ . }}"
-            {{ end }}
-            {{ with .format }}
+            {{- end }}
+            {{- with .format }}
             - name: OTF_LOG_FORMAT
               value: "{{ . }}"
             {{- end }}
             {{- end }}
-            {{ with .Values.pluginCache }}
+            {{- with .Values.pluginCache }}
             - name: OTF_PLUGIN_CACHE
               value: "{{ . }}"
-            {{ end }}
-            {{ with .Values.concurrency }}
+            {{- end }}
+            {{- with .Values.concurrency }}
             - name: OTF_CONCURRENCY
               value: "{{ . }}"
-            {{ end }}
+            {{- end }}
 {{- range $key, $value := .Values.extraEnvs }}
             - name: {{ $key }}
               value: {{ $value }}
