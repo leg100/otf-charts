@@ -37,7 +37,14 @@ spec:
           imagePullPolicy: {{ .Values.image.pullPolicy }}
           env:
             - name: OTF_TOKEN
-              value: "{{ required "An agent token is required" .Values.token }}"
+            {{- with .Values.tokenFromSecret }}
+              valueFrom:
+                secretKeyRef:
+                  name: {{ .name }}
+                  key: {{ .key }}
+            {{- else }}
+              value: "{{ .Values.token }}"
+            {{- end }}
             - name: OTF_ADDRESS
               value: "{{ required "An address is required" .Values.address }}"
             {{- with .Values.logging }}

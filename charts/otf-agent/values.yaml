@@ -16,6 +16,13 @@ image:
 # -- (string) Token to authenticate the agent. Required.
 token:
 
+# -- (object) Source token from a secret
+tokenFromSecret:
+  # name of secret
+  # name: ""
+  # key within secret containing token
+  # key: ""
+
 # -- (string) URL of the OTF server to connect to. Must begin with https:// or http://. Required
 address:
 
