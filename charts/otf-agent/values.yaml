@@ -16,10 +16,10 @@ image:
 # -- (string) Token to authenticate the agent. Required.
 token:
 
-# -- IP address or hostname of the OTF server to connect to. Defaults to localhost:8080.
+# -- (string) URL of the OTF server to connect to. Must begin with https:// or http://. Required
 address:
 
-# -- (int) Set the number of runs that can be processed concurrently. Defaults to 5.
+# -- (int) Set the number of runs that can be processed concurrently. See [docs](https://docs.otf.ninja/latest/config/flags/#-concurrency).
 concurrency:
 
 logging:

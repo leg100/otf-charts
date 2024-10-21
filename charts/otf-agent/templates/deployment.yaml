@@ -38,6 +38,8 @@ spec:
           env:
             - name: OTF_TOKEN
               value: "{{ required "An agent token is required" .Values.token }}"
+            - name: OTF_ADDRESS
+              value: "{{ required "An address is required" .Values.address }}"
             {{- with .Values.logging }}
             {{ with .verbosity }}
             - name: OTF_V
@@ -54,10 +56,6 @@ spec:
             {{ end }}
             {{ with .Values.concurrency }}
             - name: OTF_CONCURRENCY
-              value: "{{ . }}"
-            {{ end }}
-            {{ with .Values.address }}
-            - name: OTF_ADDRESS
               value: "{{ . }}"
             {{ end }}
 {{- range $key, $value := .Values.extraEnvs }}
