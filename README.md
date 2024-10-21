@@ -40,7 +40,7 @@ helm-docs
 ```
 Any changes to the version or to the `values.yaml` file are automatically reflected in the generated `README.md`. 
 
-## Linting
+### Linting
 
 To lint the charts to check for any errors run `helm lint`:
 
@@ -51,7 +51,7 @@ helm lint ./charts/otf
 helm lint ./charts/otf-agent
 ```
 
-## Deploy and test
+### Deploy and test
 
 To deploy the chart to a cluster to the namespace `otf-test` with pre-configured defaults along with PostgreSQL:
 
