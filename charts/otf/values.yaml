@@ -2,7 +2,7 @@
 # This is a YAML-formatted file.
 # Declare variables to be passed into your templates.
 
-# -- Number of otfd nodes in cluster
+# -- Number of otfd nodes to cluster
 replicaCount: 1
 
 image:
