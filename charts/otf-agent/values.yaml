@@ -13,17 +13,17 @@ image:
 
 # see https://docs.otf.ninja/latest/config/flags/ for all options
 
-# -- (string) Token to authenticate the agent. Required.
+# -- (string) Token to authenticate the agent. Either this or `tokenFromSecret` must be specified.
 token:
 
-# -- (object) Source token from a secret
+# -- (object) Source token from a secret. Either this or `token` must be specified
 tokenFromSecret:
   # name of secret
   # name: ""
   # key within secret containing token
   # key: ""
 
-# -- (string) URL of the OTF server to connect to. Must begin with https:// or http://. Required
+# -- (string) URL of the OTF server to connect to. Must begin with `https://` or `http://`. Required.
 address:
 
 # -- (int) Set the number of runs that can be processed concurrently. See [docs](https://docs.otf.ninja/latest/config/flags/#-concurrency).
