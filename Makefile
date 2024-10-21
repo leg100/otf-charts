@@ -1,9 +1,5 @@
 .PHONY: all
-all: readme lint deploy test
-
-.PHONY: lint
-lint:
-	helm lint ./charts/otf
+all: deploy test
 
 .PHONY: deploy
 deploy:
@@ -13,12 +9,6 @@ deploy:
 test: lint deploy
 	helm test -n otf-test otf
 
-.PHONY: readme
-readme:
-	helm-docs
-
 .PHONY: bump
 bump:
-	for f in ./charts/*/Chart.yaml ;\
-		do yq -i '.version |= (split(".") | .[-1] |= ((. tag = "!!int") + 1) | join("."))' $$f
-	done
+	yq -i '.version |= (split(".") | .[-1] |= ((. tag = "!!int") + 1) | join("."))' ./charts/${CHART}/Chart.yaml
