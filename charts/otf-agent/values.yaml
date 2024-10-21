@@ -16,7 +16,7 @@ image:
 # -- (string) Token to authenticate the agent. Either this or `tokenFromSecret` must be specified.
 token:
 
-# -- (object) Source token from a secret. Either this or `token` must be specified
+# -- (object) Source token from a secret. Either this or `token` must be specified.
 tokenFromSecret:
   # name of secret
   # name: ""

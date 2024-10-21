@@ -8,7 +8,7 @@ Installs the [otf agent](https://docs.otf.ninja/latest/agents/).
 
 First follow the instructions in the repo [README.md](../../README.md) to add the helm repository.
 
-Then to install the agent chart you first need to ensure:
+Then ensure:
 
 * You have a running deployment of `otfd`.
 * You have generated an agent token (see the [agent docs](https://docs.otf.ninja/latest/agents/)).
@@ -55,7 +55,7 @@ address=10.244.0.18 agent.pool_id=apool-5b90443ed82ef769
 
 | Key | Type | Default | Description |
 |-----|------|---------|-------------|
-| address | string | `nil` | URL of the OTF server to connect to. Must begin with https:// or http://. Required |
+| address | string | `nil` | URL of the OTF server to connect to. Must begin with `https://` or `http://`. Required. |
 | affinity | object | `{}` |  |
 | concurrency | int | `nil` | Set the number of runs that can be processed concurrently. See [docs](https://docs.otf.ninja/latest/config/flags/#-concurrency). |
 | extraEnvs | list | `[]` | Extra environment variables to be passed to the deployment. |
@@ -78,8 +78,8 @@ address=10.244.0.18 agent.pool_id=apool-5b90443ed82ef769
 | serviceAccount.annotations | object | `{}` |  |
 | serviceAccount.create | bool | `true` |  |
 | serviceAccount.name | string | `""` |  |
-| token | string | `nil` | Token to authenticate the agent. Required. |
-| tokenFromSecret | object | `nil` | Source token from a secret |
+| token | string | `nil` | Token to authenticate the agent. Either this or `tokenFromSecret` must be specified. |
+| tokenFromSecret | object | `nil` | Source token from a secret. Either this or `token` must be specified. |
 | tolerations | list | `[]` |  |
 | topologySpreadConstraints | list | `[]` |  |
 
