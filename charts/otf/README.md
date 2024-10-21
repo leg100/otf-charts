@@ -1,8 +1,16 @@
-# Helm chart for `otfd`
+# otf-charts
 
-## Usage
+![Version: 0.3.12](https://img.shields.io/badge/Version-0.3.12-informational?style=flat-square) ![Type: application](https://img.shields.io/badge/Type-application-informational?style=flat-square) ![AppVersion: 0.2.4](https://img.shields.io/badge/AppVersion-0.2.4-informational?style=flat-square)
 
-Add the helm repository as instructed in the [repo README](../../README.md).
+[OTF](https://github.com/leg100/otf) Helm charts.
+
+## Instructions
+
+Add the helm repository:
+
+```bash
+helm repo add otf https://leg100.github.io/otf-charts
+```
 
 To install the chart you need at the very minimum:
 
@@ -79,7 +87,7 @@ Note: you should only use this for testing purposes.
 | podSecurityContext | object | `{}` | Set security context for otfd pod |
 | postgres.enabled | bool | `false` | Install postgres chart dependency. |
 | proxy | string | `nil` | Specify an http(s) proxy for outbound connections. |
-| replicaCount | int | `1` | Number of otfd nodes in cluster |
+| replicaCount | int | `1` | Number of otfd nodes to cluster |
 | resources | object | `{}` |  |
 | sandbox | bool | `false` | Enable sandboxing of terraform apply - note, this will run pods as privileged |
 | secret | string | `""` | Cryptographic secret. Must be a hex-encoded 16-byte string. See [docs](https://docs.otf.ninja/latest/config/flags/#-secret). |

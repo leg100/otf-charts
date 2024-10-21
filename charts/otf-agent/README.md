@@ -1,8 +1,16 @@
 # Helm Chart for `otf-agent`
 
-## Usage
+![Version: 0.1.9](https://img.shields.io/badge/Version-0.1.9-informational?style=flat-square) ![Type: application](https://img.shields.io/badge/Type-application-informational?style=flat-square) ![AppVersion: 0.2.4](https://img.shields.io/badge/AppVersion-0.2.4-informational?style=flat-square)
 
-Add the helm repository as instructed in the [repo README](../../README.md).
+[OTF](https://github.com/leg100/otf) Helm charts.
+
+## Instructions
+
+Add the helm repository:
+
+```bash
+helm repo add otf https://leg100.github.io/otf-charts
+```
 
 To install the chart you need at the very minimum:
 
@@ -19,7 +27,7 @@ helm install otf otf/otf --set secret=2876cb147697052eec5b3cdb56211681 --set sit
 Alternatively, you can use the [test-values.yaml](./charts/otf/test-values.yaml) from this repo:
 
 ```
-helm install otf-agent otf/otf-agent -f ./charts/otf/test-values.yaml
+helm install otf otf/otf -f ./charts/otf/test-values.yaml
 ```
 
 This will:
@@ -34,31 +42,30 @@ Note: you should only use this for testing purposes.
 
 | Key | Type | Default | Description |
 |-----|------|---------|-------------|
+| address | string | `nil` | IP address or hostname of the OTF server to connect to. Defaults to localhost:8080. |
 | affinity | object | `{}` |  |
-| env.OTF_ADDRESS | string | `""` |  |
-| env.OTF_CONCURRENCY | string | `"1"` |  |
-| env.OTF_LOG_FORMAT | string | `"default"` |  |
-| env.OTF_PLUGIN_CACHE | string | `"false"` |  |
-| env.OTF_TOKEN | string | `"eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpYXQiOjE2OTgxNDkxMTAsImtpbmQiOiJhZ2VudF90b2tlbiIsIm9yZ2FuaXphdGlvbiI6ImN5bmtyYSIsInN1YiI6ImF0LUdiYVBldFVZNDZVQjB3dzgifQ.-4nZYNm0x1F6Q-9eNUrmMY_WceRsYbhRq3LkQGyRzJw"` |  |
-| env.OTF_V | string | `"0"` |  |
+| concurrency | int | `nil` | Set the number of runs that can be processed concurrently. Defaults to 5. |
+| extraEnvs | list | `[]` | Extra environment variables to be passed to the deployment. |
 | fullnameOverride | string | `""` |  |
 | image.pullPolicy | string | `"IfNotPresent"` |  |
 | image.repository | string | `"leg100/otf-agent"` |  |
-| image.tag | string | `"0.2.4"` |  |
+| image.tag | string | `""` |  |
 | imagePullSecrets | list | `[]` |  |
+| logging.format | string | `nil` | Logging format: default, text, or json. See [docs](https://docs.otf.ninja/latest/config/flags/#-log-format) |
+| logging.verbosity | int | `nil` | Logging verbosity, the higher the number the more verbose the logs. See [docs](https://docs.otf.ninja/latest/config/flags/#-v). |
 | nameOverride | string | `""` |  |
 | nodeSelector | object | `{}` |  |
+| pluginCache | bool | `nil` | Enable shared plugin cache for terraform providers. |
 | podAnnotations | object | `{}` |  |
 | podSecurityContext | object | `{}` |  |
 | rbac.create | bool | `true` |  |
-| replicaCount | int | `1` |  |
+| replicaCount | int | `1` | Number of agents to deploy to cluster. Note: each agent shares the same token and therefore belongs to the same pool. To deploy agents belonging to different pools you'll need to deploy multiple charts. |
 | resources | object | `{}` |  |
 | securityContext | object | `{}` |  |
-| service.port | int | `80` |  |
-| service.type | string | `"ClusterIP"` |  |
 | serviceAccount.annotations | object | `{}` |  |
 | serviceAccount.create | bool | `true` |  |
 | serviceAccount.name | string | `""` |  |
+| token | string | `nil` | Token to authenticate the agent. Required. |
 | tolerations | list | `[]` |  |
 | topologySpreadConstraints | list | `[]` |  |
 
