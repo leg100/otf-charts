@@ -15,9 +15,10 @@ test: lint deploy
 
 .PHONY: readme
 readme:
-	helm-docs -c ./charts/otf -t ../../README.md.gotmpl -o ../../README.md
+	helm-docs
 
-# bump patch in chart version
 .PHONY: bump
 bump:
-	yq -i '.version |= (split(".") | .[-1] |= ((. tag = "!!int") + 1) | join("."))' ./charts/otf/Chart.yaml
+	for f in ./charts/*/Chart.yaml ;\
+		do yq -i '.version |= (split(".") | .[-1] |= ((. tag = "!!int") + 1) | join("."))' $$f
+	done
