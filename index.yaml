@@ -745,4 +745,18 @@ entries:
     urls:
     - https://github.com/leg100/otf-charts/releases/download/otf-0.1.1/otf-0.1.1.tgz
     version: 0.1.1
-generated: "2024-10-18T17:06:42.279463922Z"
+  otf-agent:
+  - apiVersion: v2
+    appVersion: 0.2.4
+    created: "2024-10-21T21:06:32.579689446Z"
+    description: Helm chart for the OTF agent
+    digest: fb6831673c6853594086cd729e217b20f030e0dfe4c6c26bc0bbe5634a4385bc
+    maintainers:
+    - email: louisgarman@gmail.com
+      name: Louis Garman
+    name: otf-agent
+    type: application
+    urls:
+    - https://github.com/leg100/otf-charts/releases/download/otf-agent-0.1.9/otf-agent-0.1.9.tgz
+    version: 0.1.9
+generated: "2024-10-21T21:06:32.579828956Z"
