@@ -17,13 +17,13 @@ To install the chart you need at the very minimum:
 For example, if a PostgreSQL server is accessible via the hostname `postgres`, has a database named `otf` accessible to a user with username `postgres` and password `postgres`:
 
 ```
-helm install otf otf/otf --set secret=2876cb147697052eec5b3cdb56211681 --set site-token=my-token --set database=postgres://postgres:postgres@postgres/otf
+helm install otfd otf/otfd --set secret=2876cb147697052eec5b3cdb56211681 --set site-token=my-token --set database=postgres://postgres:postgres@postgres/otf
 ```
 
-Alternatively, you can use the [test-values.yaml](./charts/otf/test-values.yaml) from this repo:
+Alternatively, you can use the [test-values.yaml](./charts/otfd/test-values.yaml) from this repo:
 
 ```
-helm install otf otf/otf -f ./charts/otf/test-values.yaml
+helm install otfd otf/otfd -f ./charts/otfd/test-values.yaml
 ```
 
 This will:

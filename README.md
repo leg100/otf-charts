@@ -12,7 +12,7 @@ helm repo add otf https://leg100.github.io/otf-charts
 
 Then follow instructions for installing the relevant chart:
 
-* [otf](./charts/otf/README.md)
+* [otfd](./charts/otfd/README.md)
 * [otf-agent](./charts/otf-agent/README.md)
 
 ## Development
@@ -24,8 +24,8 @@ If you make any changes to a chart you need to bump its chart version. You can e
 ```bash
 # requires `yq`
 #
-# To update the otf chart version
-CHART=otf make bump
+# To update the otfd chart version
+CHART=otfd make bump
 #
 # To update the otf-agent chart version
 CHART=otf-agent make bump
@@ -45,24 +45,24 @@ Any changes to the version or to the `values.yaml` file are automatically reflec
 To lint the charts to check for any errors run `helm lint`:
 
 ```bash
-# lint the otf chart
-helm lint ./charts/otf
+# lint the otfd chart
+helm lint ./charts/otfd
 # lint the otf-agent chart
 helm lint ./charts/otf-agent
 ```
 
-### Deploy and test otf chart
+### Deploy and test otfd chart
 
-To deploy the `./charts/otf` chart to a cluster to the namespace `otf-test` with pre-configured defaults along with PostgreSQL:
+To deploy the `./charts/otfd` chart to a cluster to the namespace `otfd-test` with pre-configured defaults along with PostgreSQL:
 
 ```bash
-make deploy-otf
+make deploy-otfd
 ```
 
-To test the chart (assumes release is named `otf`):
+To test the chart (assumes release is named `otfd`):
 
 ```bash
-make test-otf
+make test-otfd
 ```
 
 And to lint, deploy, and then test the chart:

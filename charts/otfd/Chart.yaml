@@ -1,5 +1,5 @@
 apiVersion: v2
-name: otf
+name: otfd
 description: Helm chart for the OTF daemon
 # A chart can be either an 'application' or a 'library' chart.
 #
