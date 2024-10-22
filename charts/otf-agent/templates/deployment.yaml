@@ -45,8 +45,8 @@ spec:
             {{- else }}
               value: "{{ .Values.token }}"
             {{- end }}
-            - name: OTF_ADDRESS
-              value: "{{ required "An address is required" .Values.address }}"
+            - name: OTF_URL
+              value: "{{ required ".Values.url is required" .Values.url }}"
             {{- with .Values.logging }}
             {{- with .verbosity }}
             - name: OTF_V

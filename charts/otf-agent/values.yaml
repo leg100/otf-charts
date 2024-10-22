@@ -24,7 +24,7 @@ tokenFromSecret:
   # key: ""
 
 # -- (string) URL of the OTF server to connect to. Must begin with `https://` or `http://`. Required.
-address:
+url:
 
 # -- (int) Set the number of runs that can be processed concurrently. See [docs](https://docs.otf.ninja/latest/config/flags/#-concurrency).
 concurrency:

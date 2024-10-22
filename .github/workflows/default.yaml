@@ -21,7 +21,7 @@ jobs:
       - name: Render
         run: |
           helm template ./charts/otfd
-          helm template ./charts/otf-agent --set token=my_agent_token --set address=https://otf.ninja
+          helm template ./charts/otf-agent --set token=my_agent_token --set url=https://otf.ninja
       - name: Create kind cluster
         uses: helm/kind-action@v1.8.0
       - name: Test

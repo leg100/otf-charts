@@ -18,7 +18,7 @@ Once you have these, deploy the chart with the URL of the `otfd` deployment and 
 
 ```bash
 helm install otf-agent otf/otf-agent \
-    --set address=https://otf.acme.corp \
+    --set url=https://otf.acme.corp \
     --set token=eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJhZ2VudF9wb29sX2lkIjoiYXBvb2wtNWI5MDQ0M2VkODJlZjc2OSIsImlhdCI6MTcyOTUzMDMwMywia2luZCI6ImFnZW50X3Rva2VuIiwic3ViIjoiYXQtWDZLdjVuQVE4Y1NQQ3lvZCJ9._wziD3FlGC2xdF4Ss_sf-igcagrgrhUmM5AFJGrwQso
 ```
 
@@ -30,7 +30,7 @@ kubectl create secret generic agent-token \
     --from-literal token=eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJhZ2VudF9wb29sX2lkIjoiYXBvb2wtNWI5MDQ0M2VkODJlZjc2OSIsImlhdCI6MTcyOTUzMDMwMywia2luZCI6ImFnZW50X3Rva2VuIiwic3ViIjoiYXQtWDZLdjVuQVE4Y1NQQ3lvZCJ9._wziD3FlGC2xdF4Ss_sf-igcagrgrhUmM5AFJGrwQso
 # deploy chart
 helm template otf-agent otf/otf-agent
-    --set address=https://otf.acme.corp
+    --set url=https://otf.acme.corp
     --set tokenFromSecret.name=agent-token,tokenFromSecret.key=token
 ```
 
