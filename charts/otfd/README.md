@@ -46,7 +46,7 @@ Note: you should only use this for testing purposes.
 | databasePasswordFromSecret | object | `nil` | Source database password from a secret |
 | databaseUsernameFromSecret | object | `nil` | Source database username from a secret |
 | envsFromSecret | string | `""` | Environment variables to be passed to the deployment from the named kubernetes secret. |
-| extraEnvs | list | `[]` | Extra environment variables to be passed to the deployment. |
+| extraEnvs | object | `{}` | Extra environment variables to be passed to the deployment. |
 | fullnameOverride | string | `""` |  |
 | github.clientID | string | `""` | Github OAuth client ID. See [docs](https://docs.otf.ninja/latest/config/flags/#-github-client-id). |
 | github.clientSecret | string | `""` | Github OAuth client secret. See [docs](https://docs.otf.ninja/latest/config/flags/#-github-client-secret). |

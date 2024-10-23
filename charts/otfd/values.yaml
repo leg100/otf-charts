@@ -44,7 +44,7 @@ databasePasswordFromSecret:
   # key: ""
 
 # -- Extra environment variables to be passed to the deployment.
-extraEnvs: []
+extraEnvs: {}
 
 # -- Environment variables to be passed to the deployment from the named kubernetes secret.
 envsFromSecret: ""
