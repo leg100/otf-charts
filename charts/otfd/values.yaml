@@ -67,6 +67,9 @@ siteAdmins: []
 # -- Max config upload size in bytes. See [docs](https://docs.otf.ninja/latest/config/flags/#-max-config-size).
 maxConfigSize: ""
 
+# -- The default engine to use. Specify either 'terraform' or 'tofu'. See [docs](https://docs.otf.ninja/latest/config/flags/#-default-engine).
+defaultEngine: ""
+
 logging:
   # -- Logging verbosity, the higher the number the more verbose the logs. See [docs](https://docs.otf.ninja/latest/config/flags/#-v).
   verbosity: 0
