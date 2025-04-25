@@ -1,6 +1,6 @@
 # Helm chart for `otfd`
 
-![Version: 0.3.15](https://img.shields.io/badge/Version-0.3.15-informational?style=flat-square) ![Type: application](https://img.shields.io/badge/Type-application-informational?style=flat-square) ![AppVersion: 0.3.19](https://img.shields.io/badge/AppVersion-0.3.19-informational?style=flat-square)
+![Version: 0.3.17](https://img.shields.io/badge/Version-0.3.17-informational?style=flat-square) ![Type: application](https://img.shields.io/badge/Type-application-informational?style=flat-square) ![AppVersion: 0.3.20](https://img.shields.io/badge/AppVersion-0.3.20-informational?style=flat-square)
 
 Installs the [otf](https://github.com/leg100/otf) daemon.
 
@@ -45,6 +45,7 @@ Note: you should only use this for testing purposes.
 | database | string | `""` | Postgres connection string |
 | databasePasswordFromSecret | object | `nil` | Source database password from a secret |
 | databaseUsernameFromSecret | object | `nil` | Source database username from a secret |
+| defaultEngine | string | `""` | The default engine to use. Specify either 'terraform' or 'tofu'. See [docs](https://docs.otf.ninja/latest/config/flags/#-default-engine). |
 | envsFromSecret | string | `""` | Environment variables to be passed to the deployment from the named kubernetes secret. |
 | extraEnvs | object | `{}` | Extra environment variables to be passed to the deployment. |
 | fullnameOverride | string | `""` |  |

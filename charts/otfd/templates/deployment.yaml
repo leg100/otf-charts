@@ -78,6 +78,10 @@ spec:
             - name: OTF_MAX_CONFIG_SIZE
               value: "{{ .Values.maxConfigSize }}"
             {{ end }}
+            {{ if .Values.defaultEngine }}
+            - name: OTF_DEFAULT_ENGINE
+              value: "{{ .Values.defaultEngine }}"
+            {{ end }}
             - name: OTF_GITHUB_CLIENT_ID
               value: {{ .Values.github.clientID }}
             - name: OTF_GITHUB_CLIENT_SECRET
