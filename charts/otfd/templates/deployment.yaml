@@ -143,6 +143,10 @@ spec:
             - name: no_proxy
               value: "{{ . }}"
             {{- end }}
+            {{ with .Values.allowedOrigins -}}
+            - name: OTF_ALLOWED_ORIGINS
+              value: "{{ . | join "," }}"
+            {{- end }}
             {{ with .Values.siteAdmins -}}
             - name: OTF_SITE_ADMINS
               value: "{{ . | join ","}}"
