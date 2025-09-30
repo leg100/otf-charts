@@ -1,6 +1,6 @@
 # Helm chart for `otfd`
 
-![Version: 0.3.20](https://img.shields.io/badge/Version-0.3.20-informational?style=flat-square) ![Type: application](https://img.shields.io/badge/Type-application-informational?style=flat-square) ![AppVersion: 0.4.3](https://img.shields.io/badge/AppVersion-0.4.3-informational?style=flat-square)
+![Version: 0.3.20](https://img.shields.io/badge/Version-0.3.20-informational?style=flat-square) ![Type: application](https://img.shields.io/badge/Type-application-informational?style=flat-square) ![AppVersion: 0.4.5](https://img.shields.io/badge/AppVersion-0.4.5-informational?style=flat-square)
 
 Installs the [otf](https://github.com/leg100/otf) daemon.
 
@@ -83,7 +83,7 @@ Note: you should only use this for testing purposes.
 | oidc.usernameClaim | string | `""` | Override OIDC claim used for username. See [docs](https://docs.otf.ninja/auth/providers/oidc/). |
 | podAnnotations | object | `{}` | Add annotations to otfd pod |
 | podSecurityContext | object | `{}` | Set security context for otfd pod |
-| postgres.enabled | bool | `false` | Install postgres chart dependency. |
+| postgres.enabled | bool | `false` | Install postgres chart dependency. NOTE: this should only be used for testing purposes. |
 | proxy | string | `nil` | Specify an http(s) proxy for outbound connections. |
 | replicaCount | int | `1` | Number of otfd nodes to cluster |
 | resources | object | `{}` |  |
