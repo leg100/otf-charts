@@ -1,6 +1,6 @@
 # Helm chart for `otfd`
 
-![Version: 0.3.20](https://img.shields.io/badge/Version-0.3.20-informational?style=flat-square) ![Type: application](https://img.shields.io/badge/Type-application-informational?style=flat-square) ![AppVersion: 0.4.5](https://img.shields.io/badge/AppVersion-0.4.5-informational?style=flat-square)
+![Version: 0.3.20](https://img.shields.io/badge/Version-0.3.20-informational?style=flat-square) ![Type: application](https://img.shields.io/badge/Type-application-informational?style=flat-square) ![AppVersion: 0.4.6](https://img.shields.io/badge/AppVersion-0.4.6-informational?style=flat-square)
 
 Installs the [otf](https://github.com/leg100/otf) daemon.
 
