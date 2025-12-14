@@ -3,7 +3,7 @@ name: otf-agent
 description: Helm chart for the OTF agent
 type: application
 version: 0.1.17
-appVersion: 0.4.9
+appVersion: 0.4.10
 maintainers:
   - name: Louis Garman
     email: louisgarman@gmail.com
