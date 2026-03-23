@@ -747,6 +747,23 @@ entries:
     version: 0.1.1
   otf-agent:
   - apiVersion: v2
+    appVersion: 0.5.18
+    created: "2026-03-23T09:16:18.454824071Z"
+    dependencies:
+    - name: runner
+      repository: file://../libs/runner
+      version: 0.1.0
+    description: Helm chart for the OTF agent
+    digest: d1850816431f4d84ff32cd267bf6fd68ec4486bbf29b92c4ca4515ecc870b4c6
+    maintainers:
+    - email: louisgarman@gmail.com
+      name: Louis Garman
+    name: otf-agent
+    type: application
+    urls:
+    - https://github.com/leg100/otf-charts/releases/download/otf-agent-0.1.24/otf-agent-0.1.24.tgz
+    version: 0.1.24
+  - apiVersion: v2
     appVersion: 0.5.17
     created: "2026-03-07T10:07:08.712879663Z"
     dependencies:
@@ -949,6 +966,27 @@ entries:
     - https://github.com/leg100/otf-charts/releases/download/otf-agent-0.1.9/otf-agent-0.1.9.tgz
     version: 0.1.9
   otfd:
+  - apiVersion: v2
+    appVersion: 0.5.18
+    created: "2026-03-23T09:16:18.667670687Z"
+    dependencies:
+    - condition: postgres.enabled
+      name: postgres
+      repository: file://charts/postgres
+      version: 0.1.0
+    - name: runner
+      repository: file://../libs/runner
+      version: 0.1.0
+    description: Helm chart for the OTF daemon
+    digest: f03ecaf4a71022dff9574ab6a0a260e3d6fe27ddc19cf78a9ae93a1e272e92f0
+    maintainers:
+    - email: louisgarman@gmail.com
+      name: Louis Garman
+    name: otfd
+    type: application
+    urls:
+    - https://github.com/leg100/otf-charts/releases/download/otfd-0.3.28/otfd-0.3.28.tgz
+    version: 0.3.28
   - apiVersion: v2
     appVersion: 0.5.17
     created: "2026-03-07T10:07:08.838687893Z"
@@ -1219,4 +1257,4 @@ entries:
     urls:
     - https://github.com/leg100/otf-charts/releases/download/otfd-0.3.12/otfd-0.3.12.tgz
     version: 0.3.12
-generated: "2026-03-07T10:07:08.839018831Z"
+generated: "2026-03-23T09:16:18.66796273Z"
